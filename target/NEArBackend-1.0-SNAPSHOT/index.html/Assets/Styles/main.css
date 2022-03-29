@@ -15,14 +15,6 @@ display: none;
   display: block;
 }
 
-.box-logo{
-  border-radius: 5%;
-  float: left; 
-  margin-top: 5%; 
-  margin-left: 79.1px; 
-  background-color: rgb(192, 62, 79); 
-  box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2); 
-}
 .btn-box-sign-up{
   color: white;
   background-color: brown;
@@ -37,10 +29,9 @@ display: none;
 }
 
 .box-sign-up{
-  margin-top: 1%;
   float: left;
-  padding: 1%;
-  margin-left: 5%;
+  padding: 2%;
+  margin-left: 20%;
   background-color: #ffffffd7; 
   border-radius: 1%;
   font-family: 'Abel', sans-serif;

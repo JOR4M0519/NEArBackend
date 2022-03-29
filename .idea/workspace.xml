@@ -10,32 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87661b7c-abde-4271-a530-a66d7ed77e84" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/account.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/sign-up.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/LogIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/LogIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/LogIn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/JSON/Git Bash Here.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/JSON/storage.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/Styles/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/Logo_footer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/ROBDVO4PFNFULOLBIK3DGUO5KQ.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/Rude-Golems.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/cryptos.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/logo.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/monos.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/person.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/product.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/js/add.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/js/functions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/LogIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/LogIn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/home.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/storage.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Assets/Styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Assets/Styles/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +48,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\git\NEArBackend\src\main\webapp\Assets\img" />
+      <recent name="D:\git\NEArBackend\src\main\webapp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 26.0.1.Final">
     <configuration name="JBoss/WildFly 26.0.1.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 26.0.1.Final" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/NEArBackend-1.0-SNAPSHOT" />
       <deployment>
@@ -84,6 +71,24 @@
         <option name="CREDENTIAL_ALIAS" />
       </server-settings>
       <predefined_log_file enabled="true" id="JBoss" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="56805" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -106,6 +111,14 @@
         </option>
       </method>
     </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/NEArBackend/src/main/webapp/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -116,6 +129,8 @@
       <option name="presentableId" value="Default" />
       <updated>1648424221305</updated>
       <workItem from="1648424232197" duration="4267000" />
+      <workItem from="1648472493689" duration="2231000" />
+      <workItem from="1648556155458" duration="3800000" />
     </task>
     <servers />
   </component>
