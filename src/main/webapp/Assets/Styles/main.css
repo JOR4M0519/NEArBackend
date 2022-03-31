@@ -20,11 +20,21 @@ display: none;
 .box-logo{
   border-radius: 5%;
   float: left; 
-  margin-top: 5%; 
-  margin-left: 79.1px; 
+  margin-top: 1%; 
+  margin-left: 19%;
   background-color: rgb(192, 62, 79); 
   box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2); 
 }
+
+.box-logoc{
+  border-radius: 5%;
+  float: left; 
+  margin-top: 1%; 
+  margin-left: 16%;
+  background-color: rgb(192, 62, 79); 
+  box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2); 
+}
+
 .btn-box-sign-up{
   color: white;
   background-color: brown;
@@ -42,7 +52,17 @@ display: none;
   margin-top: 1%;
   float: left;
   padding: 1%;
-  margin-left: 5%;
+  margin-left: 15%;
+  background-color: #ffffffd7; 
+  border-radius: 1%;
+  font-family: 'Abel', sans-serif;
+}
+
+.box-create{
+  margin-top: 1%;
+  float: left;
+  padding: 1%;
+  margin-left: 8%;
   background-color: #ffffffd7; 
   border-radius: 1%;
   font-family: 'Abel', sans-serif;
