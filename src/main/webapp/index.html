@@ -19,53 +19,62 @@
 
 <body>
 <!-- NAVIGATION -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #9b205e ;">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="Assets/img/logo.png" style="width: 20%;">
-    </a>
-    <div class="input-group">
-      <div class="form-outline">
-        <input type="search" id="form1" class="form-control" placeholder="Buscar arte" />
+<div class=" fixed-top" style="background-color: #911e1e ;">
+
+<div style="display: flex; margin-left: 80%; padding-bottom: 0.5%; padding-top: 0.2%;">
+  
+    <div class="dropdown show" style="float: left;">
+      <a class="btn btn-secondary dropdown-toggle" id="dropdown"  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+        </svg> Mi Cuenta
+      </a>
+    
+      <div class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" id="dropdown-item" href="login.html">Iniciar Sesion</a>
+        <a class="dropdown-item" id="dropdown-item" href="sign-up.html">Crear Cuenta</a>
       </div>
-      <button type="button" class="btn btn-primary">
-        <i class="fas fa-search"></i>
-      </button>
     </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+</div>
+
+
+<nav class="navbar" style=" display: inline-block; width: 100%; background-color: #771818;" >  
+  <div class="input-group">
+    
+    <a class="navbar-brand" href="#">
+      <img src="Assets/img/logo_NEar.png" width="30%" style="margin-left: 10%;">
+    </a>
+    
+    <input class="container-input-search" type="search" id="form1" class="form-control" placeholder="Buscar arte" >    
+    <button type="button" style="background-color: #ffffff2c" class="btn btn-primary" >
+      <i class="fas fa-search"></i>
+    </button>  
+
+    <div class="navbar navbar-expand-lg" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#info">Info</a>
+          <a id="nav-a" class="nav-link" href="#info">Info</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#Artist">Artistas</a>
+          <a id="nav-a" class="nav-link" href="#Artist">Artistas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#Contact">Contáctenos</a>
+          <a id="nav-a"  class="nav-link" href="#Contact">Contáctenos</a>
         </li>
-        <ul class="sub-nav-bar" >
-          <a class="nav-link">Mi cuenta</a>
-          <li class="sub-nav-item">
-            <a class="nav-link" href="login.html">Ingresar</a>
-          </li>
-          <li class="sub-nav-item">
-            <a class="nav-link" href="sign-up.html">Crear Cuenta</a>
-          </li>
-        </ul>
       </ul>
-    </div>
-  </div>
+    </div> 
 </nav>
+</div>
+
+
+
 
 <!-- HEADER -->
-<header class="main-header" style="margin-top: 61px;">
+<header class="main-header" style="margin-top: 7%;">
   <div class="bg-dark text-white py-5">
     <div class="container">
-      <div class="row d-flex h-100">
+      <div class="row d-flex ">
         <div class="col-sm-6 text-center justify-content-center align-self-center">
           <h1>
             New Era Art
@@ -332,7 +341,7 @@
       </div>
       <div class="col-lg-3 align-self-center">
         <a href="#">
-          <img src="Assets/img/Logo_footer.png" style=" width: 129%;">
+          <img src="Assets/img/logo_NEar2.png" style=" width: 180%;">
         </a>
       </div>
     </div>
