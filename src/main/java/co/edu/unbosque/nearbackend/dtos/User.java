@@ -8,11 +8,13 @@ public class User {
     private String username;
 
     @CsvBindByName
-    private  String password;
+    private String password;
 
     @CsvBindByName
     private String role;
 
+    public User() {
+    }
 
     public String getUsername() {
         return username;
@@ -37,4 +39,14 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                '}';
+    }
 }
+

@@ -44,19 +44,20 @@ public class Login extends HttpServlet {
         User userFounded = users.stream().filter(user -> username.equals(user.getUsername()) && password.equals(user.getPassword()))
                 .findFirst().orElse(null);
 
-        //if (username.equals(userFounded.getUsername()) && password.equals(userFounded.getPassword())) {
+        if (username.equals(userFounded.getUsername()) && password.equals(userFounded.getPassword())) {
 
-        if (userFounded !=null) {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("./home.jsp");
+            if (userFounded != null) {
+                RequestDispatcher dispatcher = request.getRequestDispatcher("./index.html");
 
-            try {
-                dispatcher.forward(request, response);
-            } catch (ServletException e) {
-                e.printStackTrace();
+                try {
+                    dispatcher.forward(request, response);
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                }
+
+            } else {
+                response.sendRedirect("./401.html");
             }
-
-        } else {
-            response.sendRedirect("./401.html");
         }
     }
 }

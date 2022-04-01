@@ -15,10 +15,12 @@ import java.util.Optional;
 
 public class UserService {
 
-    public Optional<List<User>> getUsers() throws IOException {
+    public static Optional<List<User>> getUsers() throws IOException {
+
         List<User> users;
 
-        try (InputStream is = UserService.class.getClassLoader().getResourceAsStream("Users.csv")) {
+        try (InputStream is = UserService.class.getClassLoader()
+                .getResourceAsStream("users.csv")) {
 
             if (is == null) {
                 return Optional.empty();
@@ -29,20 +31,31 @@ public class UserService {
 
             try (BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
 
-                CsvToBean<User> csvToBean = new CsvToBeanBuilder<User>(br).
-                        withType(User.class)
+                CsvToBean<User> csvToBean = new CsvToBeanBuilder<User>(br)
+                        .withType(User.class)
                         .withMappingStrategy(strategy)
                         .withIgnoreLeadingWhiteSpace(true)
                         .build();
 
                 users = csvToBean.parse();
             }
-
         }
+
         return Optional.of(users);
     }
 
-    public static void main(String[] args) {
+    public static void main(String args[]) {
+        try {
+            Optional<List<User>> users = new UserService().getUsers();
+
+            for (User user: users.get()) {
+                System.out.println(user.toString());
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
+
 }
