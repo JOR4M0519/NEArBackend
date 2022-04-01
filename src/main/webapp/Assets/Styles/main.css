@@ -7,7 +7,15 @@
 }
 
 
+#form1{
+  width: 600px;
+  padding-left: 20px;
 
+}
+
+.img_header{
+   width: 100%;
+}
 .navbar {
     position: fixed;
     display: block;
@@ -67,19 +75,21 @@ display: none;
   }
   
   .background-overlay {
-    background: #a42424 ;
+    background: #BA2737 ;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
   }
-  
+
+
   .form-control, .btn{
     border-radius: 0;
+    
   }
 
   #navbarNav{
-    margin-left: 72%;
+    margin-left: 78%;
   }
 
   .btn-mi-cuenta{
@@ -92,6 +102,7 @@ display: none;
     
   }
 
+ 
   #dropdown{
     background-color: transparent; 
     border-color: #ffffff2a; 
@@ -99,7 +110,7 @@ display: none;
   }
 
   #dropdown-item:active{
-    background-color: #c04848;
+    background-color: #BA2737;
   }
 
   .container-input-search, .btn-primary{
@@ -110,7 +121,7 @@ display: none;
   }
 
   .team, footer {
-    background: #a42424 ;
+    background: #BA2737 ;
   }
 
   .tarjetas
@@ -158,7 +169,7 @@ display: none;
   }
 
   .foot {
-    background: #a42424;
+    background: #BA2737;
   } 
   .logo{
     width: 180px;
