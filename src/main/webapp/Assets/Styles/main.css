@@ -44,7 +44,12 @@ display: none;
   box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2); 
 }
 
+.prueba{
+  height: 15vh;
+}
+
 .box-logoc{
+  
   border-radius: 5%;
   float: left; 
   margin-top: 1%; 

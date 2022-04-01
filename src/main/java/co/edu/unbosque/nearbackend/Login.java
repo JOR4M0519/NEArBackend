@@ -47,7 +47,7 @@ public class Login extends HttpServlet {
         if (username.equals(userFounded.getUsername()) && password.equals(userFounded.getPassword())) {
 
             if (userFounded != null) {
-                RequestDispatcher dispatcher = request.getRequestDispatcher("./index.html");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("./account.html");
 
                 try {
                     dispatcher.forward(request, response);
