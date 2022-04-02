@@ -1,15 +1,15 @@
 package co.edu.unbosque.nearbackend.services;
 
 import co.edu.unbosque.nearbackend.dtos.User;
+import com.opencsv.CSVWriter;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,6 +43,48 @@ public class UserService {
 
         return Optional.of(users);
     }
+
+    public void createNFT(String id,String pictureLink,String title,String author,String precio,String email_owner){
+        String STRING_ARRAY_SAMPLE = "./string-array-sample.csv";
+            try (   
+                    Writer writer = Files.newBufferedWriter(Paths.get(STRING_ARRAY_SAMPLE));
+
+                    CSVWriter csvWriter = new CSVWriter(writer,
+                            CSVWriter.DEFAULT_SEPARATOR,
+                            CSVWriter.NO_QUOTE_CHARACTER,
+                            CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+                            CSVWriter.DEFAULT_LINE_END);
+            ) {
+                String[] headerRecord = {"id","pictureLink","title","author","precio","email_owner"};
+                csvWriter.writeNext(headerRecord);
+
+                csvWriter.writeNext(new String[]{"Sundar Pichai ♥", "sundar.pichai@gmail.com", "+1-1111111111", "India"});
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+    }
+
+    public void createUser(String email,String username,String password,String role){
+        String STRING_ARRAY_SAMPLE = "./string-array-sample.csv";
+
+        try (
+                Writer writer = Files.newBufferedWriter(Paths.get(STRING_ARRAY_SAMPLE));
+
+                CSVWriter csvWriter = new CSVWriter(writer,
+                        CSVWriter.DEFAULT_SEPARATOR,
+                        CSVWriter.NO_QUOTE_CHARACTER,
+                        CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+                        CSVWriter.DEFAULT_LINE_END);
+        ) {
+            String[] headerRecord = {"email","username","password","role","Fcoins"};
+            csvWriter.writeNext(headerRecord);
+
+            csvWriter.writeNext(new String[]{"Sundar Pichai ♥", "sundar.pichai@gmail.com", "+1-1111111111", "India"});
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public static void main(String args[]) {
         try {

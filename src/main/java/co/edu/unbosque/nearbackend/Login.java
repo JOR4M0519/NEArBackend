@@ -33,9 +33,12 @@ public class Login extends HttpServlet {
     public void destroy() {
     }
 
+    public void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException{
+
+    }
+
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
@@ -47,9 +50,10 @@ public class Login extends HttpServlet {
         if (username.equals(userFounded.getUsername()) && password.equals(userFounded.getPassword())) {
 
             if (userFounded != null) {
-                RequestDispatcher dispatcher = request.getRequestDispatcher("./account.html");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("./index.jsp");
 
                 try {
+
                     dispatcher.forward(request, response);
                 } catch (ServletException e) {
                     e.printStackTrace();

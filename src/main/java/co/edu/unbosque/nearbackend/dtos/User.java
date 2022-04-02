@@ -5,16 +5,26 @@ import com.opencsv.bean.CsvBindByName;
 public class User {
 
     @CsvBindByName
+    private String email;
+    @CsvBindByName
     private String username;
-
     @CsvBindByName
     private String password;
-
     @CsvBindByName
     private String role;
+    @CsvBindByName
+    private String Fcoins;
 
     public User() {
     }
+
+    public String getEmail() {return email;}
+
+    public void setEmail(String email) {this.email = email;}
+
+    public String getFcoins() {return Fcoins;}
+
+    public void setFcoins(String fcoins) {Fcoins = fcoins;}
 
     public String getUsername() {
         return username;
@@ -43,9 +53,11 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "username='" + username + '\'' +
+                "email='" + email + '\'' +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
+                ", Fcoins='" + Fcoins + '\'' +
                 '}';
     }
 }
