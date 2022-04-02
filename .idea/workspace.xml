@@ -11,88 +11,24 @@
   <component name="ChangeListManager">
     <list default="true" id="87661b7c-abde-4271-a530-a66d7ed77e84" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NEArBackend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NEArBackend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Assets/Styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Assets/Styles/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Assets/img/Banner_Index.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Assets/img/Banner_Index.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Assets/img/LogoNEAR.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Assets/img/Logo_Near_SP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Assets/img/Logo_Near_SP2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Assets/img/Logo_footer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Assets/img/create_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Assets/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Assets/img/logo_NEar.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Assets/img/logo_NEar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Assets/img/logo_NEar2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/create.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Assets/JSON/Git Bash Here.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Assets/JSON/storage.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Assets/Styles/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Assets/img/Logo_footer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Assets/img/ROBDVO4PFNFULOLBIK3DGUO5KQ.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Assets/img/Rude-Golems.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Assets/img/cryptos.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Assets/img/logo.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Assets/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Assets/img/monos.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Assets/img/person.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Assets/img/product.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Assets/js/add.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Assets/js/functions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/Index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/LogIn.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/WEB-INF/classes/co/edu/unbosque/nearbackend/HelloServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/home.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT.war/storage.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/LogIn.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/Users.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/dtos/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/services/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/lib/commons-beanutils-1.9.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/lib/commons-collections-3.2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/lib/commons-collections4-4.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/lib/commons-lang3-3.8.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/lib/commons-text-1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/lib/opencsv-4.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/JSON/Git Bash Here.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/JSON/storage.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/Styles/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/Banner_Index.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/LogoNEAR.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/Logo_Near_SP.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/Logo_Near_SP2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/Logo_footer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/ROBDVO4PFNFULOLBIK3DGUO5KQ.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/Rude-Golems.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/create_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/cryptos.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/logo.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/logo_NEar.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/logo_NEar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/logo_NEar2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/monos.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/person.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/pixel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/product.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/img/sign_up.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/js/account.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/js/add.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/Assets/js/functions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/account.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/create.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/sign-up.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html/storage.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Users.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/dtos/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/services/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/sign-up.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign-up.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/sign-up.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/sign-up.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +183,8 @@
       <workItem from="1648472493689" duration="2231000" />
       <workItem from="1648556155458" duration="4414000" />
       <workItem from="1648763326017" duration="3289000" />
-      <workItem from="1648834074761" duration="2862000" />
+      <workItem from="1648834074761" duration="3039000" />
+      <workItem from="1648929518927" duration="1132000" />
     </task>
     <servers />
   </component>

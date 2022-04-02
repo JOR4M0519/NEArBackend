@@ -43,7 +43,7 @@
   <div class="input-group">
     
     <a class="navbar-brand" href="#">
-      <img src="Assets/img/Logo_Near_SP.png" class="logo">
+      <img src="Assets/img/logoNear2.png" class="logo">
     </a>
     
     <input class="container-input-search" type="search" id="form1" class="form-control" placeholder="Buscar arte" >    
@@ -117,8 +117,8 @@
               <tr>
                 <td>
                   <img
-                          src="https://http2.mlstatic.com/resources/frontend/homes-korriban/assets/images/payments/credit-card.svg"
-                          alt="Metodos de pago">
+                    src="https://http2.mlstatic.com/resources/frontend/homes-korriban/assets/images/payments/credit-card.svg"
+                    alt="Metodos de pago">
                 </td>
                 <td>
                   <h6>Paga a cuotas</h6>
@@ -332,7 +332,7 @@
       </div>
       <div class="col-lg-3 align-self-center">
         <a href="#">
-          <img src="Assets/img/logo_Near_SP2.png" style=" width: 140%;">
+          <img src="Assets/img/logoNear1.png" style=" width: 140%;">
         </a>
       </div>
     </div>
