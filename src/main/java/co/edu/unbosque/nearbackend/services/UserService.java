@@ -119,29 +119,42 @@ public class UserService {
     }
 
     //Recargar Cuenta
-    public void reloadMoney(String emailSearch, int coins){
+    public void reloadMoney(String email, int coins){
         try {
             List<User> users = getUsers().get();
 
-            User userFounded = users.stream().filter(user -> emailSearch.equals(user.getEmail())).findFirst().orElse(null);
-            String email = emailSearch;
-            String username = userFounded.getUsername();
-            String password = userFounded.getPassword();
-            String role = userFounded.getRole();
-            String Fcoins = (Integer.parseInt(userFounded.getFcoins())+coins)+"";
-
-            deleteUser(email);
-            createUser(email,username,password,role,Fcoins);
-
+            User userFounded = users.stream().filter(user -> email.equals(user.getEmail())).findFirst().orElse(null);
+            userFounded.setFcoins((Integer.parseInt(userFounded.getFcoins())+coins)+"");
+            updateUser(users);
         }
         catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    public void updateUser(List<User> users){
+        deleteFile("Users.csv");
+        for (int i=0;i<users.size();i++){
+            createUser(users.get(i).getEmail(),users.get(i).getUsername(),users.get(i).getPassword(),users.get(i).getRole(),users.get(i).getFcoins());
+        }
+    }
+
     //Eliminar Usuario
     public void deleteUser(String email){
-        
+        try {
+            List<User> users = getUsers().get();
+            User userFounded = users.stream().filter(user -> email.equals(user.getEmail())).findFirst().orElse(null);
+            users.remove(userFounded);
+            updateUser(users);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //Eliminar archivo
+    public void deleteFile(String URL){
+         new File(URL).delete();
     }
 
     public static void main(String args[]) {
