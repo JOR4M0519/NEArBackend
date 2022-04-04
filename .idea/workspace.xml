@@ -10,8 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87661b7c-abde-4271-a530-a66d7ed77e84" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/Nfts.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/dtos/NFT_Picture.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Nfts.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/dtos/NFT_Picture.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/sign-up.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign_up.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/Users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/Users.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/dtos/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/dtos/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/sign-up.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/sign_up.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Users.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/dtos/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/dtos/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/services/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +183,7 @@
       <workItem from="1648556155458" duration="4414000" />
       <workItem from="1648763326017" duration="3289000" />
       <workItem from="1648834074761" duration="3039000" />
-      <workItem from="1648929518927" duration="17878000" />
+      <workItem from="1648929518927" duration="26419000" />
     </task>
     <servers />
   </component>
