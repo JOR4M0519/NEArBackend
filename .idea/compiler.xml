@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="NEArBackend" target="1.8" />
+      <module name="NEArBackend" target="" />
     </bytecodeTargetLevel>
   </component>
 </project>
