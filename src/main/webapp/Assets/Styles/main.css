@@ -442,3 +442,76 @@ display: none;
       display: none;
     }
   }
+  .contenedor-login{
+    margin: 0%;
+    position: fixed;
+  }
+
+  .contenedor-form-login{
+    margin: 0%;
+    background-color: rgba(240, 35, 45, 0.541);
+    border-radius: 20px;
+    position: absolute;
+    width: 42%;
+    height: 60%;
+    right: 49%;
+    top: 30%;
+  }
+
+  form#form-login{
+    font-size: larger;
+  }
+
+  input[type=text]#user-input-login,#pass-input-login {
+    border: 1px dotted #fff;
+    padding-left: 2%;
+    border-radius: 20px;
+    position: absolute;
+     width: 90%;
+     height: 8.7%;
+    -webkit-appearance: none;
+  }
+
+  p#login-principaltext{
+    font-size: 36px;
+    position: absolute;
+     top: 7%;
+     left: 26%;
+  }
+
+  p#user-text-login{
+    position: absolute;
+     top: 25%;
+     left: 5%;
+
+  }
+
+  input[type=text]#user-input-login{
+    position: absolute;
+     top: 35%;
+     left: 4%;
+     
+  }
+
+  p#pass-text-login{
+    position: absolute;
+     top: 49%;
+     left: 5%;
+
+  }
+
+  input[type=password]#pass-input-login{
+    position: absolute;
+     top: 58%;
+     left: 4%;
+  }
+
+  input[type=submit]#login-submit{
+    position: absolute;
+    border-color: #fff;
+    font-size: medium;
+     width: 30%;
+     height: 12%;
+     left: 33%;
+     top: 75%;
+  }
