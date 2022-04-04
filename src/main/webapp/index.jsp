@@ -28,7 +28,7 @@
 if(name == null){
   name = "Tu cuenta";
   action = "./account";
-  urlAccount_joinSesion = "Iniciar Sesiòn-./login.html";
+  urlAccount_joinSesion = "Iniciar Sesión-./login.html";
   crearCuenta_Salir = "Crear cuenta-./sign_up.html";
 
 }
