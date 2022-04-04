@@ -12,7 +12,7 @@ public class NFT_Picture {
     @CsvBindByName
     private String author;
     @CsvBindByName
-    private String precio;
+    private String price;
     @CsvBindByName
     private String email_owner;
 
@@ -32,9 +32,9 @@ public class NFT_Picture {
 
     public void setAuthor(String author) {this.author = author;}
 
-    public String getPrecio() {return precio;}
+    public String getPrice() {return price;}
 
-    public void setPrecio(String precio) {this.precio = precio;}
+    public void setPrice(String price) {this.price = price;}
 
     public String getEmail_owner() {return email_owner;}
 
@@ -47,7 +47,7 @@ public class NFT_Picture {
                 ", pictureLink='" + pictureLink + '\'' +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
-                ", precio='" + precio + '\'' +
+                ", price='" + price + '\'' +
                 ", email_owner='" + email_owner + '\'' +
                 '}';
     }
