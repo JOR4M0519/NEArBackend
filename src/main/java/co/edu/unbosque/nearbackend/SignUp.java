@@ -17,7 +17,6 @@ import java.util.List;
 public class SignUp extends HttpServlet {
 
     private String message;
-    private UserService uService;
 
 
     public void init() {
@@ -35,11 +34,8 @@ public class SignUp extends HttpServlet {
         String password = request.getParameter("password");
         String role = request.getParameter("role");
 
-        uService = new UserService();
-        uService.setRuta(getServletContext().getRealPath("") + File.separator + "resources\\Users.csv");
-        System.out.println(uService.getRuta());
 
-        List<User> users = uService.getUsers().get();
+        List<User> users = UserService.getUsers().get();
 
         User userFounded = users.stream().filter(user -> username.equals(user.getUsername()))
                 .findFirst().orElse(null);
@@ -47,9 +43,7 @@ public class SignUp extends HttpServlet {
 
         if (userFounded == null) {
 
-
-            uService.newUser(username,name,lastname,role,password,"0");
-            System.out.println(getServletContext().getRealPath("") + File.separator + "resources\\Users.csv");
+            new UserService().createUser2(username, name, lastname, password, role, "0",getServletContext().getRealPath("") + File.separator);
             RequestDispatcher dispatcher = request.getRequestDispatcher("./index.jsp");
 
             try {
