@@ -30,25 +30,25 @@
     <div class="box-sign-up">  
       <h2 >Crear Cuenta Nombre</h2>
 
-      <form >
+      <form action="./singup" method="post">
       <div class="form-group">
         <label for="exampleInputEmail1">Correo Electrónico</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="alguien@ejemplo.com" aria-describedby="emailHelp" required>
+        <input type="email" name= "username" class="form-control" id="exampleInputEmail1" placeholder="alguien@ejemplo.com" aria-describedby="emailHelp" required>
       </div>
 
       <div class="form-group">
         <label for="name">Nombre:</label>
-        <input class="form-control" id="name" placeholder="Nombre" required>
+        <input type="text" name= "name" class="form-control" id="name" placeholder="Nombre" required>
       </div>
 
       <div class="form-group">
         <label for="name">Apellido:</label>
-        <input class="form-control" id="name" placeholder="Apellido" required>
+        <input type="text" name= "lastname" class="form-control" id="name" placeholder="Apellido" required>
       </div>
 
       <div class="form-group" style="font-family: 'Abel', sans-serif;">
         <label for="roleInput">Rol</label>
-        <select class="form-control" id="roleInput" aria-describedby="role">
+        <select name = "role" class="form-control" id="roleInput" aria-describedby="role">
           <option style="font-family: 'Abel', sans-serif;"> Artista</option>
           <option style="font-family: 'Abel', sans-serif;">Comprador</option>
         </select>
@@ -56,10 +56,10 @@
 
       <div class="form-group" style="font-family: 'Abel', sans-serif;">
         <label for="exampleInputPassword1">Contraseña</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1">
       </div>
 
-      <button type="submit" class="btn btn-primary; btn-box-sign-up" style="font-family: 'Abel', sans-serif;">Crear Cuenta</button>
+      <input type="submit" class="btn btn-primary; btn-box-sign-up" style="font-family: 'Abel', sans-serif;" value="Crear Cuenta">
       </form>
     
       <div style="margin-top: 20px;font-family: 'Abel', sans-serif;"><h2> Únete a esta nueva aventura</h2>

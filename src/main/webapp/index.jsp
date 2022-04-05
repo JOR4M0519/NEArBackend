@@ -20,7 +20,7 @@
 <body>
 
 <%
-  String name = request.getParameter("username");
+  String name = request.getParameter("name");
   String urlAccount_joinSesion = "Mi cuenta-./account.html";
   String crearCuenta_Salir = "Salir-./index.jsp";
   String action = "";

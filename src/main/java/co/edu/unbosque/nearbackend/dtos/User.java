@@ -5,26 +5,17 @@ import com.opencsv.bean.CsvBindByName;
 public class User {
 
     @CsvBindByName
-    private String email;
-    @CsvBindByName
     private String username;
     @CsvBindByName
-    private String password;
+    private String name;
+    @CsvBindByName
+    private String lastname;
     @CsvBindByName
     private String role;
     @CsvBindByName
+    private String password;
+    @CsvBindByName
     private String Fcoins;
-
-    public User() {
-    }
-
-    public String getEmail() {return email;}
-
-    public void setEmail(String email) {this.email = email;}
-
-    public String getFcoins() {return Fcoins;}
-
-    public void setFcoins(String fcoins) {Fcoins = fcoins;}
 
     public String getUsername() {
         return username;
@@ -34,12 +25,20 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getName() {
+        return name;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getRole() {
@@ -50,15 +49,20 @@ public class User {
         this.role = role;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "email='" + email + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", role='" + role + '\'' +
-                ", Fcoins='" + Fcoins + '\'' +
-                '}';
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getFcoins() {
+        return Fcoins;
+    }
+
+    public void setFcoins(String fcoins) {
+        Fcoins = fcoins;
     }
 }
 

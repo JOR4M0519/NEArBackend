@@ -14,6 +14,7 @@ import jakarta.servlet.annotation.*;
 @WebServlet(name = "login", value = "/login")
 public class Login extends HttpServlet {
     private String message;
+    private UserService uService;
 
     public void init() {
         message = "Hello World!";
@@ -42,6 +43,9 @@ public class Login extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
+        uService = new UserService();
+        uService.setRuta(getServletContext().getRealPath("") + File.separator + "resources\\Users.csv");
+        
         List<User> users = new UserService().getUsers().get();
 
         User userFounded = users.stream().filter(user -> username.equals(user.getUsername()) && password.equals(user.getPassword()))
@@ -49,7 +53,12 @@ public class Login extends HttpServlet {
 
         if (username.equals(userFounded.getUsername()) && password.equals(userFounded.getPassword())) {
 
-            if (userFounded != null) {
+            if (userFounded == null) {
+
+                response.sendRedirect("./401.html");
+
+            } else {
+
                 RequestDispatcher dispatcher = request.getRequestDispatcher("./index.jsp");
 
                 try {
@@ -58,9 +67,6 @@ public class Login extends HttpServlet {
                 } catch (ServletException e) {
                     e.printStackTrace();
                 }
-
-            } else {
-                response.sendRedirect("./401.html");
             }
         }
     }

@@ -14,15 +14,19 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 
+
 public class UserService {
 
+
+    private static String ruta = "";
     //Leer Usuario
     public static Optional<List<User>> getUsers() throws IOException {
 
         List<User> users;
+        System.out.println("getUsers"+ruta);
 
         try (InputStream is = UserService.class.getClassLoader()
-                .getResourceAsStream("users.csv")) {
+                .getResourceAsStream(ruta)) {
 
             if (is == null) {
                 return Optional.empty();
@@ -52,7 +56,7 @@ public class UserService {
         List<NFT_Picture> nft;
 
         try (InputStream is = UserService.class.getClassLoader()
-                .getResourceAsStream("Nfts.csv")) {
+                .getResourceAsStream("resources/Nfts.csv")) {
 
             if (is == null) {
                 return Optional.empty();
@@ -76,7 +80,7 @@ public class UserService {
 
     //Crear NFT
     public void createNFT(String id,String pictureLink,String title,String author,String price,String email_owner){
-        String STRING_ARRAY_SAMPLE = "./Nfts.csv";
+        String STRING_ARRAY_SAMPLE = "resources/Nfts.csv";
             try (   
                     Writer writer = Files.newBufferedWriter(Paths.get(STRING_ARRAY_SAMPLE));
 
@@ -95,9 +99,36 @@ public class UserService {
             }
     }
 
+    public void newUser(String username,String name,String lastname, String role,String password,String Fcoins){
+
+        try (
+                Writer writer = Files.newBufferedWriter(Paths.get(ruta));
+
+                CSVWriter csvWriter = new CSVWriter(writer,
+                        CSVWriter.DEFAULT_SEPARATOR,
+                        CSVWriter.NO_QUOTE_CHARACTER,
+                        CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+                        CSVWriter.DEFAULT_LINE_END);
+        ) {
+
+
+            List<User> users = getUsers().get();
+            String[] headerRecord = {"username","name","lastname","role","password","Fcoins"};
+            csvWriter.writeNext(headerRecord);
+            for (int i=0;i<users.size();i++){
+                csvWriter.writeNext(new String[]{users.get(i).getUsername(),users.get(i).getName(),
+                        users.get(i).getLastname(),users.get(i).getRole(),users.get(i).getPassword(),
+                        users.get(i).getFcoins()});
+            }
+            csvWriter.writeNext(new String[]{username,name,lastname,role,password,Fcoins});
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     //Crear Usuario
-    public void createUser(String email,String username,String password,String role,String Fcoins){
-        String STRING_ARRAY_SAMPLE = ".User/.csv";
+    public void createUser(String username,String name,String lastname, String role,String password,String Fcoins){
+        String STRING_ARRAY_SAMPLE = "resources/Users.csv";
 
         try (
                 Writer writer = Files.newBufferedWriter(Paths.get(STRING_ARRAY_SAMPLE));
@@ -109,21 +140,22 @@ public class UserService {
                         CSVWriter.DEFAULT_LINE_END);
         ) {
 
-            String[] headerRecord = {"email","username","password","role","Fcoins"};
+
+            String[] headerRecord = {"username","name","lastname","role","password","Fcoins"};
             csvWriter.writeNext(headerRecord);
 
-            csvWriter.writeNext(new String[]{email,username, password, role, Fcoins});
+            csvWriter.writeNext(new String[]{username,name,lastname,role,password,Fcoins});
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     //Recargar Cuenta
-    public void reloadMoney(String email, int coins){
+    public void reloadMoney(String username, int coins){
         try {
             List<User> users = getUsers().get();
 
-            User userFounded = users.stream().filter(user -> email.equals(user.getEmail())).findFirst().orElse(null);
+            User userFounded = users.stream().filter(user -> username.equals(user.getUsername())).findFirst().orElse(null);
             userFounded.setFcoins((Integer.parseInt(userFounded.getFcoins())+coins)+"");
             updateUser(users);
         }
@@ -133,9 +165,9 @@ public class UserService {
     }
 
     public void updateUser(List<User> users){
-        deleteFile("Users.csv");
+        deleteFile("resources/Users.csv");
         for (int i=0;i<users.size();i++){
-            createUser(users.get(i).getEmail(),users.get(i).getUsername(),users.get(i).getPassword(),users.get(i).getRole(),users.get(i).getFcoins());
+            createUser(users.get(i).getUsername(),users.get(i).getName(),users.get(i).getLastname(),users.get(i).getRole(),users.get(i).getPassword(),users.get(i).getFcoins());
         }
     }
 
@@ -143,7 +175,7 @@ public class UserService {
     public void deleteUser(String email){
         try {
             List<User> users = getUsers().get();
-            User userFounded = users.stream().filter(user -> email.equals(user.getEmail())).findFirst().orElse(null);
+            User userFounded = users.stream().filter(user -> email.equals(user.getUsername())).findFirst().orElse(null);
             users.remove(userFounded);
             updateUser(users);
         }
@@ -153,11 +185,12 @@ public class UserService {
     }
 
     //Eliminar archivo
-    public void deleteFile(String URL){
+    public static void deleteFile(String URL){
          new File(URL).delete();
     }
 
     public static void main(String args[]) {
+
         try {
             Optional<List<User>> users = new UserService().getUsers();
 
@@ -171,4 +204,11 @@ public class UserService {
 
     }
 
+    public String getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(String ruta) {
+        this.ruta = ruta;
+    }
 }
