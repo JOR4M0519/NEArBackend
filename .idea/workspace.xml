@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87661b7c-abde-4271-a530-a66d7ed77e84" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/Login.java" afterDir="false" />
@@ -20,6 +21,67 @@
       <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/account.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/resources/Users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/resources/Users.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/Login.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/createNFT.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/createNFT.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/Nfts.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Nfts.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/Users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Users.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/JSON/Git Bash Here.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/JSON/storage.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/Styles/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/Banner_Index.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/Banner_Index2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/ROBDVO4PFNFULOLBIK3DGUO5KQ.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/Rude-Golems.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/banner_index3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/createNFT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/cryptos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/imagen-login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/logo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/logoNear1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/logoNear2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/logoNear3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/monos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/person.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/pixel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/product.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/img/sign_up.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/js/account.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/js/add.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Assets/js/functions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Users.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/SignUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/dtos/NFT_Picture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/dtos/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/services/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/lib/commons-beanutils-1.9.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/lib/commons-collections-3.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/lib/commons-collections4-4.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/lib/commons-lang3-3.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/lib/commons-text-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/lib/opencsv-4.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/account.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/createNFT.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/resources/Nfts.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/resources/Users.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/sign_up.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/storage.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/SignUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/dtos/NFT_Picture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/dtos/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/services/UserService.class" beforeDir="false" />
+>>>>>>> Yopalito
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +99,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -56,14 +126,15 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\git\NEArBackend\src\main\resources" />
+      <recent name="D:\git\NEArBackend\src\main\webapp\WEB-INF\classes" />
       <recent name="C:\Users\sanpr\git\NEArBackend\src\main\webapp\resources" />
       <recent name="C:\Users\sanpr\git\NEArBackend\src\main\resources" />
       <recent name="D:\git\NEArBackend\src\main\webapp\Assets\img" />
-      <recent name="D:\git\NEArBackend\src\main\webapp" />
     </key>
   </component>
   <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 26.0.1.Final">
@@ -178,6 +249,9 @@
         </option>
       </method>
     </configuration>
+    <configuration name="createNFT.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/NEArBackend/src/main/webapp/createNFT.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/NEArBackend/src/main/webapp/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -187,9 +261,14 @@
       <item itemvalue="Application.SignUp" />
       <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="JBoss/WildFly Server.JBoss/WildFly 26.0.1.Final" />
+<<<<<<< HEAD
+=======
+      <item itemvalue="JavaScript Debug.createNFT.html" />
+>>>>>>> Yopalito
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.createNFT.html" />
         <item itemvalue="Application.UserService" />
         <item itemvalue="Application.x" />
         <item itemvalue="JavaScript Debug.index.html" />
@@ -213,7 +292,11 @@
       <workItem from="1648929518927" duration="26419000" />
       <workItem from="1649032839374" duration="360000" />
       <workItem from="1649075633426" duration="23012000" />
+<<<<<<< HEAD
       <workItem from="1649175948938" duration="5635000" />
+=======
+      <workItem from="1649188191043" duration="4958000" />
+>>>>>>> Yopalito
     </task>
     <servers />
   </component>

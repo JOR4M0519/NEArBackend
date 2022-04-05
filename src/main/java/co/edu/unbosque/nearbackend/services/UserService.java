@@ -23,10 +23,9 @@ public class UserService {
     public static Optional<List<User>> getUsers() throws IOException {
 
         List<User> users;
-        System.out.println("getUsers"+ruta);
 
         try (InputStream is = UserService.class.getClassLoader()
-                .getResourceAsStream(ruta)) {
+                        .getResourceAsStream( "Users.csv")) {
 
             if (is == null) {
                 return Optional.empty();
@@ -50,6 +49,42 @@ public class UserService {
         return Optional.of(users);
     }
 
+    public static Optional<List<NFT_Picture>> getNFT() throws IOException {
+
+        List<NFT_Picture> NFt;
+        System.out.println("getNFT"+ruta);
+
+        try (InputStream is = UserService.class.getClassLoader()
+                .getResourceAsStream(ruta)) {
+
+            if (is == null) {
+                return Optional.empty();
+            }
+
+            HeaderColumnNameMappingStrategy<NFT_Picture> strategy = new HeaderColumnNameMappingStrategy<>();
+            strategy.setType(NFT_Picture.class);
+
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
+
+                CsvToBean<NFT_Picture> csvToBean = new CsvToBeanBuilder<NFT_Picture>(br)
+                        .withType(NFT_Picture.class)
+                        .withMappingStrategy(strategy)
+                        .withIgnoreLeadingWhiteSpace(true)
+                        .build();
+
+                NFt = csvToBean.parse();
+            }
+        }
+
+        return Optional.of(NFt);
+    }
+
+    public void createUser2(String username,String name,String lastname, String role,String password,String Fcoins, String path) throws IOException {
+            String newLine = "\n" + username + "," + name + ","+lastname+ "," + role + ","+ password +","+"0";
+            FileOutputStream os = new FileOutputStream(path + "WEB-INF/classes/"+"Users.csv", true);
+            os.write(newLine.getBytes());
+            os.close();
+        }
     //Leer NFT
     public static Optional<List<NFT_Picture>> getNft() throws IOException {
 
@@ -99,8 +134,13 @@ public class UserService {
             }
     }
 
-    public void newUser(String username,String name,String lastname, String role,String password,String Fcoins){
-
+    public void newUser(String username,String name,String lastname, String role,String password,String Fcoins) {
+        List<User> users = null;
+        try {
+            users = getUsers().get();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         try (
                 Writer writer = Files.newBufferedWriter(Paths.get(ruta));
 
@@ -112,7 +152,6 @@ public class UserService {
         ) {
 
 
-            List<User> users = getUsers().get();
             String[] headerRecord = {"username","name","lastname","role","password","Fcoins"};
             csvWriter.writeNext(headerRecord);
             for (int i=0;i<users.size();i++){

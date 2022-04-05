@@ -46,6 +46,7 @@ public class Login extends HttpServlet {
 
         uService = new UserService();
         uService.setRuta(getServletContext().getRealPath("") + File.separator + "resources\\Users.csv");
+
         
         List<User> users = new UserService().getUsers().get();
 
