@@ -10,16 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87661b7c-abde-4271-a530-a66d7ed77e84" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/dtos/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/dtos/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/unbosque/nearbackend/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Nfts.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/Nfts.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Users.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign_up.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/Users.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/WEB-INF/classes/co/edu/unbosque/nearbackend/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/resources/Users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/NEArBackend-1.0-SNAPSHOT/resources/Users.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/co/edu/unbosque/nearbackend/Login.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,10 +183,10 @@
     </configuration>
     <list>
       <item itemvalue="Application.UserService" />
-      <item itemvalue="JavaScript Debug.index.html" />
-      <item itemvalue="JBoss/WildFly Server.JBoss/WildFly 26.0.1.Final" />
       <item itemvalue="Application.x" />
       <item itemvalue="Application.SignUp" />
+      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="JBoss/WildFly Server.JBoss/WildFly 26.0.1.Final" />
     </list>
     <recent_temporary>
       <list>
@@ -213,6 +213,7 @@
       <workItem from="1648929518927" duration="26419000" />
       <workItem from="1649032839374" duration="360000" />
       <workItem from="1649075633426" duration="23012000" />
+      <workItem from="1649175948938" duration="5635000" />
     </task>
     <servers />
   </component>
