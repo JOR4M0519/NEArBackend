@@ -25,7 +25,6 @@ public class UploadNft extends HttpServlet {
 
     private String message;
     private UserService uService;
-    private String name;
 
 
     public void init() {
@@ -35,25 +34,30 @@ public class UploadNft extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
 
-        // Redirecting
-        response.sendRedirect("./result.html");
+        uService = new UserService();
 
-        String titulo = request.getParameter("titulo");
-        String precio = request.getParameter("precio");
-        String url = request.getParameter("url");
-        String file = request.getParameter("file");
+        String fileName="";
+        String tittle = request.getParameter("titulo");
+        String price = request.getParameter("precio");
+        //BUSCAR
+        String author = request.getParameter("username");
 
-        String uploadPath = getServletContext().getRealPath("") + File.separator + "resources\\Nfts.csv";
+
+        String uploadPath = getServletContext().getRealPath("");
+        uploadPath = uploadPath.replace("NEArBackend-1.0-SNAPSHOT","")+ "classes"+File.separator+"NFTS";
+
+        System.out.println("Upload NFTruta: "+uploadPath);
+
         File uploadDir = new File(uploadPath);
-
         // If path doesn`t exist, create it
         if (!uploadDir.exists()) uploadDir.mkdir();
+
 
         try {
             // Getting each part from the request
             for (Part part : request.getParts()) {
                 // Storing the file using the same name
-                String fileName = part.getSubmittedFileName();
+                fileName = uService.generateRandomString()+"0X0"+tittle;
                 part.write(uploadPath + File.separator + fileName);
             }
         } catch (FileNotFoundException e) {
@@ -63,11 +67,10 @@ public class UploadNft extends HttpServlet {
         }
 
 
-        uService = new UserService();
-        uService.setRuta(getServletContext().getRealPath("") + File.separator + "resources\\Users.csv");
-        System.out.println(uService.getRuta());
+        uService.createNFT2(fileName,tittle,author,price,"",getServletContext().getRealPath("") + File.separator);
 
-        List<User> users = uService.getUsers().get();
+        // Redirecting
+        response.sendRedirect("./result.html");
 
       // User userFounded = users.stream().filter(user -> username.equals(user.getUsername()))        .findFirst().orElse(null);
 

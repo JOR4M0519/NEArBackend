@@ -30,7 +30,6 @@ if(name == null){
   action = "./account";
   urlAccount_joinSesion = "Iniciar Sesión-./login.html";
   crearCuenta_Salir = "Crear cuenta-./sign_up.html";
-
 }
 %>
 

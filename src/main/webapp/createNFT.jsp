@@ -30,7 +30,16 @@
     <div class="box-create">  
       <h2 >Crea tu NFT</h2>
 
-      <form action="./uploadNft" method="post" >
+      <form action="./uploadNft" method="post" enctype="multipart/form-data" >
+      <% 
+        String author = "4"+request.getParameter("username");
+      %>
+        
+      <div class="form-group" >
+        <label for="name" >Author:</label>
+        <input class="form-control" style="pointer-events:none;" id="name" name="author" placeholder=<%= author%>>
+      </div>  
+        
       <div class="form-group" >
         <label for="name" >Titulo:</label>
         <input class="form-control" id="name" placeholder="Titulo" name="titulo" required>
@@ -46,11 +55,13 @@
         <input class="form-control" id="name" placeholder="ULR" name="url" >
       </div>
 
-      <div class="custom-file">
+     <div class="custom-file">
         <label>Subir archivo</label>
-        <input type="file" class="custom-file-input" id="customFile" name="file">
+        
+        <input type="file" class="custom-file-input" id="customFile" name="file" >
         <label class="custom-file-label"  style="font-family: 'Abel', sans-serif;" for="customFile" >Elegir Archivo</label>
       </div>
+
 
       <button type="submit" class="btn btn-primary; btn-box-sign-up" >Subir NFT</button>
     </form>

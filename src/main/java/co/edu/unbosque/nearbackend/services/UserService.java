@@ -8,11 +8,13 @@ import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 
 public class UserService {
@@ -24,28 +26,25 @@ public class UserService {
 
         List<User> users;
 
-        try (InputStream is = UserService.class.getClassLoader()
-                        .getResourceAsStream( "Users.csv")) {
+
+        try (InputStream is = new FileInputStream(ruta)) {
 
             if (is == null) {
                 return Optional.empty();
             }
-
             HeaderColumnNameMappingStrategy<User> strategy = new HeaderColumnNameMappingStrategy<>();
             strategy.setType(User.class);
 
             try (BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
-
                 CsvToBean<User> csvToBean = new CsvToBeanBuilder<User>(br)
                         .withType(User.class)
                         .withMappingStrategy(strategy)
                         .withIgnoreLeadingWhiteSpace(true)
                         .build();
-
                 users = csvToBean.parse();
+                System.out.println("no estoy vacio: " + users.get(users.size()-1).getUsername());
             }
         }
-
         return Optional.of(users);
     }
 
@@ -79,9 +78,11 @@ public class UserService {
         return Optional.of(NFt);
     }
 
-    public void createUser2(String username,String name,String lastname, String role,String password,String Fcoins, String path) throws IOException {
-            String newLine = "\n" + username + "," + name + ","+lastname+ "," + role + ","+ password +","+"0";
-            FileOutputStream os = new FileOutputStream(path + "WEB-INF/classes/"+"Users.csv", true);
+    public void createUser2(String username,String name,String lastname,String password,String role,String Fcoins, String path) throws IOException {
+            String newLine =  username + "," + name + ","+lastname+ "," + role + ","+ password +","+"0"+"\n";
+        String fullpath = path.replace("NEArBackend-1.0-SNAPSHOT"+File.separator,"")+ "classes"+File.separator+"Users.csv";
+        System.out.println("Users:"+fullpath);
+        FileOutputStream os = new FileOutputStream(fullpath, true);
             os.write(newLine.getBytes());
             os.close();
         }
@@ -111,6 +112,18 @@ public class UserService {
             }
         }
         return Optional.of(nft);
+    }
+
+    public void createNFT2(String id,String title,String author, String price,String email_owner, String path) throws IOException {
+        String newLine = "\n" + id + "," + title + ","+author+ "," + price + ","+ email_owner +","+"0";
+
+        String fullpath = path.replace("NEArBackend-1.0-SNAPSHOT"+File.separator,"")+ "classes"+File.separator+"Nfts.csv";
+
+        System.out.println("nft ruta: "+fullpath);
+        FileOutputStream os = new FileOutputStream( fullpath, true);
+
+        os.write(newLine.getBytes());
+        os.close();
     }
 
     //Crear NFT
@@ -226,6 +239,21 @@ public class UserService {
     //Eliminar archivo
     public static void deleteFile(String URL){
          new File(URL).delete();
+    }
+
+    public String generateRandomString() {
+            int leftLimit = 48; // numeral '0'
+            int rightLimit = 122; // letter 'z'
+            int targetStringLength = 10;
+            Random random = new Random();
+
+            String generatedString = random.ints(leftLimit, rightLimit + 1)
+                    .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+                    .limit(targetStringLength)
+                    .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                    .toString();
+
+        return generatedString;
     }
 
     public static void main(String args[]) {

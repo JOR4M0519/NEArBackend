@@ -17,6 +17,7 @@ import java.util.List;
 public class SignUp extends HttpServlet {
 
     private String message;
+    private UserService uService;
 
 
     public void init() {
@@ -34,8 +35,10 @@ public class SignUp extends HttpServlet {
         String password = request.getParameter("password");
         String role = request.getParameter("role");
 
+        uService = new UserService();
+        uService.setRuta(getServletContext().getRealPath("").replace("NEArBackend-1.0-SNAPSHOT","")+ "classes"+File.separator+"Users.csv");
 
-        List<User> users = UserService.getUsers().get();
+        List<User> users = uService.getUsers().get();
 
         User userFounded = users.stream().filter(user -> username.equals(user.getUsername()))
                 .findFirst().orElse(null);
