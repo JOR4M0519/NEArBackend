@@ -515,3 +515,29 @@ input[type=submit]#login-submit{
   left: 33%;
   top: 75%;
 }
+
+.card1
+{
+  vertical-align: middle;
+  padding: 3%;
+}
+
+.card .content{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  z-index: 10;
+}
+
+.card:hover .content{
+  height: 210px;
+}
+
+.card:hover .content h3{
+  position: relative;
+}
+
+.card:hover .content .btns{
+}
