@@ -17,6 +17,8 @@ public class NFT_Picture {
     @CsvBindByName
     private String price;
     @CsvBindByName
+    private String likes;
+    @CsvBindByName
     private String email_owner;
 
     public String getExtension() {return extension;}
@@ -42,6 +44,14 @@ public class NFT_Picture {
     public String getPrice() {return price;}
 
     public void setPrice(String price) {this.price = price;}
+
+    public String getLikes() {
+        return likes;
+    }
+
+    public void setLikes(String likes) {
+        this.likes = likes;
+    }
 
     public String getEmail_owner() {return email_owner;}
 
