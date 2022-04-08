@@ -20,24 +20,6 @@ public class Login extends HttpServlet {
         message = "Hello World!";
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
-
-        // Hello
-        PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println();
-        out.println("<h1>" + message + "</h1>");
-        out.println("</body></html>");
-    }
-
-    public void destroy() {
-    }
-
-    public void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException{
-
-    }
-
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         String username = request.getParameter("username");
@@ -59,9 +41,8 @@ public class Login extends HttpServlet {
                 response.sendRedirect("./401.html");
 
             } else {
-
+                request.setAttribute("name", userFounded.getName());
                 RequestDispatcher dispatcher = request.getRequestDispatcher("./index.jsp");
-
 
                 try {
 

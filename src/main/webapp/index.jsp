@@ -18,20 +18,21 @@
 </head>
 
 <body>
-<script type="text/javascript">
-  localStorage.setItem('name','${param.name}'); //Where param user is your request parameter from previous jsp.
-</script>
-<%
-  String name = request.getParameter("name");
-  String urlAccount_joinSesion = "Mi cuenta-./account.jsp";
-  String crearCuenta_Salir = "Salir-./index.jsp";
-  String action = "";
+<input type="hidden" id="username" value="<%= request.getParameter("username")%>">
 
-if(name == null){
-  name = "Tu cuenta";
-  action = "./account";
-  urlAccount_joinSesion = "Iniciar Sesión-./login.html";
-  crearCuenta_Salir = "Crear cuenta-./sign_up.html";
+<%
+
+  String data ="";
+  String name ="";
+  if( request.getAttribute("name") != null) {
+    name = String.valueOf(request.getAttribute("name"));
+    data = "<form action=\"./account\" method=\"post\" name=\"myaccount\"> <input type=\"hidden\" id=\"usernameData\" name=\"usernameData\"> <input class=\"dropdown-item\" id=\"dropdown-item\" type=\"submit\" value=\"Mi cuenta\"> </form> <form action=\"./account\" method=\"get\"> <input type=\"hidden\" name=\"usernameData\"> <input class=\"dropdown-item \" id=\"dropdown-item\" type=\"submit\" value=\"Salir\"> </form>";
+
+  }else{
+    name ="Mi Cuenta";
+    data = "<a class=\"dropdown-item \" id=\"dropdown-item\" href=\"./login.html\"> Iniciar Sesión </a><a class=\"dropdown-item\" id=\"dropdown-item\" href=\"./sign_up.jsp\"> Crear cuenta </a>";
+
+
 }
 %>
 
@@ -47,12 +48,11 @@ if(name == null){
           <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
           <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
         </svg>
-        <span  id="nameAccount" name="nameAccount"> <%= name %> </span>
+        <span  id="nameAccount"> <%= name %> </span>
       </a>
 
       <div class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item " action=" <%= action %> " method="post" id="dropdown-item" href="<%= urlAccount_joinSesion.split("-")[1] %>"> <%= urlAccount_joinSesion.split("-")[0] %> </a>
-        <a class="dropdown-item" id="dropdown-item" href="<%= crearCuenta_Salir.split("-")[1] %>"> <%= crearCuenta_Salir.split("-")[0] %> </a>
+      <%=data%>
       </div>
     </div>
 
@@ -88,9 +88,6 @@ if(name == null){
 </nav>
 </div>
 
-
-
-
 <!-- HEADER -->
 <header class="main-header" style="margin-top: 7%;">
 
@@ -102,10 +99,10 @@ if(name == null){
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="Assets/img/banner_index2.png" alt="First slide">
+        <img class="d-block w-100" src="Assets/img/Banner_Index2.png" alt="First slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="Assets/img/banner_index.png" alt="Second slide">
+        <img class="d-block w-100" src="Assets/img/Banner_Index.png" alt="Second slide">
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="Assets/img/banner_index3.png" alt="Third slide">
@@ -237,11 +234,56 @@ if(name == null){
     <p id="ofertas" class="card_tittle">Catálogo:</p>
     <!--Guia js-->
     <div class="card-group contenedor-social" id="socialcard">
-      <!--
-      <div class="card">
-        <img src="https://www.ratbastard.io/static/media/8.38f68f8e.png">
-        <p>Name</p>
-      </div>-->
+      <section class="py-5">
+
+        <div class="album py-5 bg-light">
+          <div class="container">
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                  <div class="imgBx">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="100%" src="https://www.arweave.net/yoNSEKfSCGY23L14Y_P06G42r79G7cl4HYFeM5kjXdo?ext=png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></img>
+                  </div>
+                  <div class="content">
+                    <div class="card-body">
+                      <h3 class="card-text">Nombre NFT</h3>
+                      <p class="card-text">Autor NFT</p>
+                      <p class="text-muted">Precio NFT</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group btns">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carro</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                  <div class="imgBx">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="100%" src="https://www.arweave.net/yoNSEKfSCGY23L14Y_P06G42r79G7cl4HYFeM5kjXdo?ext=png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></img>
+                  </div>
+                  <div class="content">
+                    <div class="card-body">
+                      <h3 class="card-text">Nombre NFT</h3>
+                      <p class="card-text">Autor NFT</p>
+                      <p class="text-muted">Precio NFT</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group btns">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carro</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </section>
@@ -326,12 +368,12 @@ if(name == null){
           ¿Tienes alguna pregunta, sugerencia o queja? <br>
           Consígnala aquí nosotros estaremos atendiendo tu reclamo.
         </p>
-        <form action="">
+        <form name="hi" action="">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <i class="fas fa-user input-group-text"></i>
             </div>
-            <input type="text" class="form-control" placeholder="Nombre" aria-label="Username"
+            <input type="text" class="form-control"  name="holaa" placeholder="Nombre" aria-label="Username"
                    aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
@@ -374,7 +416,20 @@ if(name == null){
   </div>
 </footer>
 
+<script type="text/javascript">
 
+  var username = document.getElementById("username").value;
+  localStorage.setItem('username', username);
+
+  var Myelement = document.forms['myaccount']['usernameData'];
+  console.log(Myelement.value);
+  var user = localStorage.getItem('username');
+  Myelement.setAttribute('value',user);
+  console.log(Myelement.value);
+
+
+
+</script>
 <!-- BOOTSTRAP SCRIPTS -->
 <script src="Assets/js/functions.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
