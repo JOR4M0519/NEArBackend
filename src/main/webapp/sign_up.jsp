@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +21,9 @@
 </head>
 
 <body style="background-color: #BA2737; font-family: 'Abel', sans-serif;">
+
+<input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
+
   <div>
 
     <div style="float: left; "><img src="Assets/img/sign_up.jpg" height="100%" width="108%"></div>
@@ -58,7 +62,6 @@
         <label for="exampleInputPassword1">Contraseña</label>
         <input type="password" name="password" class="form-control" id="exampleInputPassword1">
       </div>
-
       <input type="submit" class="btn btn-primary; btn-box-sign-up" style="font-family: 'Abel', sans-serif;" value="Crear Cuenta">
       </form>
     
@@ -69,5 +72,21 @@
      <div>
 
   </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="alert/dist/sweetalert.css">
+    <script type="text/javascript">
+
+      var status = document.getElementById("status").value;
+      if(status=="failed"){
+
+        swal({
+          title: "Cuenta Existente!",
+          text: "Intente Nuevamente.",
+          imageUrl: 'src/main/webapp/Assets/img/error.png'
+        });
+      }
+
+    </script>
+
 </body>
 </html>

@@ -43,19 +43,27 @@ public class SignUp extends HttpServlet {
         User userFounded = users.stream().filter(user -> username.equals(user.getUsername()))
                 .findFirst().orElse(null);
 
+        RequestDispatcher dispatcher =null;
+
 
         if (userFounded == null) {
 
-            new UserService().createUser(username, name, lastname, password, role, "0",getServletContext().getRealPath("") + File.separator);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("./index.jsp");
 
-            try {
-                dispatcher.forward(request, response);
-            } catch (ServletException e) {
-                e.printStackTrace();
-            }
+            new UserService().createUser(username, name, lastname, password, role, "0",getServletContext().getRealPath("") + File.separator);
+            request.setAttribute("name", name);
+            dispatcher = request.getRequestDispatcher("./index.jsp");
+
+
         }else{
-            response.sendRedirect("./401.html");
+
+            request.setAttribute("status", "failed");
+            dispatcher = request.getRequestDispatcher("./sign_up.jsp");
+
+        }
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
         }
     }
 
