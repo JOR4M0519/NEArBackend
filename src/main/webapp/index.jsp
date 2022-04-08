@@ -18,10 +18,12 @@
 </head>
 
 <body>
-
+<script type="text/javascript">
+  localStorage.setItem('name','${param.name}'); //Where param user is your request parameter from previous jsp.
+</script>
 <%
   String name = request.getParameter("name");
-  String urlAccount_joinSesion = "Mi cuenta-./account.html";
+  String urlAccount_joinSesion = "Mi cuenta-./account.jsp";
   String crearCuenta_Salir = "Salir-./index.jsp";
   String action = "";
 
@@ -45,11 +47,11 @@ if(name == null){
           <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
           <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
         </svg>
-        <span  id="nameAccount"> <%= name %> </span>
+        <span  id="nameAccount" name="nameAccount"> <%= name %> </span>
       </a>
 
       <div class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" action=" <%= action %> " method="post" id="dropdown-item" href="<%= urlAccount_joinSesion.split("-")[1] %>"> <%= urlAccount_joinSesion.split("-")[0] %> </a>
+        <a class="dropdown-item " action=" <%= action %> " method="post" id="dropdown-item" href="<%= urlAccount_joinSesion.split("-")[1] %>"> <%= urlAccount_joinSesion.split("-")[0] %> </a>
         <a class="dropdown-item" id="dropdown-item" href="<%= crearCuenta_Salir.split("-")[1] %>"> <%= crearCuenta_Salir.split("-")[0] %> </a>
       </div>
     </div>

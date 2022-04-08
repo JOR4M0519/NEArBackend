@@ -2,16 +2,12 @@ package co.edu.unbosque.nearbackend.services;
 
 import co.edu.unbosque.nearbackend.dtos.NFT_Picture;
 import co.edu.unbosque.nearbackend.dtos.User;
-import com.opencsv.CSVWriter;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -25,7 +21,6 @@ public class UserService {
     public static Optional<List<User>> getUsers() throws IOException {
 
         List<User> users;
-
 
         try (InputStream is = new FileInputStream(ruta)) {
 
@@ -48,51 +43,12 @@ public class UserService {
         return Optional.of(users);
     }
 
-    public static Optional<List<NFT_Picture>> getNFT() throws IOException {
-
-        List<NFT_Picture> NFt;
-        System.out.println("getNFT"+ruta);
-
-        try (InputStream is = UserService.class.getClassLoader()
-                .getResourceAsStream(ruta)) {
-
-            if (is == null) {
-                return Optional.empty();
-            }
-
-            HeaderColumnNameMappingStrategy<NFT_Picture> strategy = new HeaderColumnNameMappingStrategy<>();
-            strategy.setType(NFT_Picture.class);
-
-            try (BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
-
-                CsvToBean<NFT_Picture> csvToBean = new CsvToBeanBuilder<NFT_Picture>(br)
-                        .withType(NFT_Picture.class)
-                        .withMappingStrategy(strategy)
-                        .withIgnoreLeadingWhiteSpace(true)
-                        .build();
-
-                NFt = csvToBean.parse();
-            }
-        }
-
-        return Optional.of(NFt);
-    }
-
-    public void createUser2(String username,String name,String lastname,String password,String role,String Fcoins, String path) throws IOException {
-            String newLine =  username + "," + name + ","+lastname+ "," + role + ","+ password +","+"0"+"\n";
-        String fullpath = path.replace("NEArBackend-1.0-SNAPSHOT"+File.separator,"")+ "classes"+File.separator+"Users.csv";
-        System.out.println("Users:"+fullpath);
-        FileOutputStream os = new FileOutputStream(fullpath, true);
-            os.write(newLine.getBytes());
-            os.close();
-        }
     //Leer NFT
     public static Optional<List<NFT_Picture>> getNft() throws IOException {
 
         List<NFT_Picture> nft;
 
-        try (InputStream is = UserService.class.getClassLoader()
-                .getResourceAsStream("resources/Nfts.csv")) {
+        try (InputStream is = new FileInputStream(ruta)) {
 
             if (is == null) {
                 return Optional.empty();
@@ -114,92 +70,25 @@ public class UserService {
         return Optional.of(nft);
     }
 
-    public void createNFT2(String id,String title,String author, String price,String email_owner, String path) throws IOException {
-        String newLine = "\n" + id + "," + title + ","+author+ "," + price + ","+ email_owner +","+"0";
+    public void createUser(String username, String name, String lastname, String password, String role, String Fcoins, String path) throws IOException {
+            String newLine =  username + "," + name + ","+lastname+ "," + role + ","+ password +","+"0"+"\n";
+        String fullpath = path.replace("NEArBackend-1.0-SNAPSHOT"+File.separator,"")+ "classes"+File.separator+"Users.csv";
+        System.out.println("Users:"+fullpath);
+        FileOutputStream os = new FileOutputStream(fullpath, true);
+            os.write(newLine.getBytes());
+            os.close();
+        }
+
+    public void createNFT(String id, String extension, String title, String author, String price, String email_owner, String path) throws IOException {
+        String newLine = id + "," + extension + "," + title + ","+author+ "," + price + ","+ email_owner +","+"0"+"\n";
 
         String fullpath = path.replace("NEArBackend-1.0-SNAPSHOT"+File.separator,"")+ "classes"+File.separator+"Nfts.csv";
 
         System.out.println("nft ruta: "+fullpath);
         FileOutputStream os = new FileOutputStream( fullpath, true);
-
         os.write(newLine.getBytes());
         os.close();
-    }
 
-    //Crear NFT
-    public void createNFT(String id,String pictureLink,String title,String author,String price,String email_owner){
-        String STRING_ARRAY_SAMPLE = "resources/Nfts.csv";
-            try (   
-                    Writer writer = Files.newBufferedWriter(Paths.get(STRING_ARRAY_SAMPLE));
-
-                    CSVWriter csvWriter = new CSVWriter(writer,
-                            CSVWriter.DEFAULT_SEPARATOR,
-                            CSVWriter.NO_QUOTE_CHARACTER,
-                            CSVWriter.DEFAULT_ESCAPE_CHARACTER,
-                            CSVWriter.DEFAULT_LINE_END);
-            ) {
-                String[] headerRecord = {"id","pictureLink","title","author","price","email_owner"};
-                csvWriter.writeNext(headerRecord);
-
-                csvWriter.writeNext(new String[]{id,pictureLink,title,author,price,email_owner});
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-    }
-
-    public void newUser(String username,String name,String lastname, String role,String password,String Fcoins) {
-        List<User> users = null;
-        try {
-            users = getUsers().get();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try (
-                Writer writer = Files.newBufferedWriter(Paths.get(ruta));
-
-                CSVWriter csvWriter = new CSVWriter(writer,
-                        CSVWriter.DEFAULT_SEPARATOR,
-                        CSVWriter.NO_QUOTE_CHARACTER,
-                        CSVWriter.DEFAULT_ESCAPE_CHARACTER,
-                        CSVWriter.DEFAULT_LINE_END);
-        ) {
-
-
-            String[] headerRecord = {"username","name","lastname","role","password","Fcoins"};
-            csvWriter.writeNext(headerRecord);
-            for (int i=0;i<users.size();i++){
-                csvWriter.writeNext(new String[]{users.get(i).getUsername(),users.get(i).getName(),
-                        users.get(i).getLastname(),users.get(i).getRole(),users.get(i).getPassword(),
-                        users.get(i).getFcoins()});
-            }
-            csvWriter.writeNext(new String[]{username,name,lastname,role,password,Fcoins});
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    //Crear Usuario
-    public void createUser(String username,String name,String lastname, String role,String password,String Fcoins){
-        String STRING_ARRAY_SAMPLE = "resources/Users.csv";
-
-        try (
-                Writer writer = Files.newBufferedWriter(Paths.get(STRING_ARRAY_SAMPLE));
-
-                CSVWriter csvWriter = new CSVWriter(writer,
-                        CSVWriter.DEFAULT_SEPARATOR,
-                        CSVWriter.NO_QUOTE_CHARACTER,
-                        CSVWriter.DEFAULT_ESCAPE_CHARACTER,
-                        CSVWriter.DEFAULT_LINE_END);
-        ) {
-
-
-            String[] headerRecord = {"username","name","lastname","role","password","Fcoins"};
-            csvWriter.writeNext(headerRecord);
-
-            csvWriter.writeNext(new String[]{username,name,lastname,role,password,Fcoins});
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     //Recargar Cuenta
@@ -219,7 +108,7 @@ public class UserService {
     public void updateUser(List<User> users){
         deleteFile("resources/Users.csv");
         for (int i=0;i<users.size();i++){
-            createUser(users.get(i).getUsername(),users.get(i).getName(),users.get(i).getLastname(),users.get(i).getRole(),users.get(i).getPassword(),users.get(i).getFcoins());
+            //createUser(users.get(i).getUsername(),users.get(i).getName(),users.get(i).getLastname(),users.get(i).getRole(),users.get(i).getPassword(),users.get(i).getFcoins());
         }
     }
 

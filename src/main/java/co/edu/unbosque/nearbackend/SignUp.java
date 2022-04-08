@@ -46,7 +46,7 @@ public class SignUp extends HttpServlet {
 
         if (userFounded == null) {
 
-            new UserService().createUser2(username, name, lastname, password, role, "0",getServletContext().getRealPath("") + File.separator);
+            new UserService().createUser(username, name, lastname, password, role, "0",getServletContext().getRealPath("") + File.separator);
             RequestDispatcher dispatcher = request.getRequestDispatcher("./index.jsp");
 
             try {

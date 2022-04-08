@@ -11,6 +11,11 @@
    </head>
 <body>
 
+<%
+    String name = request.getParameter("name");
+
+%>
+
   <div class="sidebar">
     <div class="logo-details">
         <a href="index.html"><img class="logo icon" src="Assets\img\logoNear3.png"></a>
@@ -83,7 +88,7 @@
         <figure>
           <img id="icon" src="Assets\img\avatar_driver_people_person_profile_user_icon_123374.png">
          </figure>
-        <div id="text-icono">Laura Alejandra Mateus Ruiz</div>
+        <div id="text-icono"><%=name%></div>
       </section>
       
       <section id="informacion-personal">

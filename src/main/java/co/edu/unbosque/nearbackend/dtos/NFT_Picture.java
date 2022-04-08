@@ -3,8 +3,11 @@ package co.edu.unbosque.nearbackend.dtos;
 import com.opencsv.bean.CsvBindByName;
 
 public class NFT_Picture {
+
     @CsvBindByName
     private String id;
+    @CsvBindByName
+    private String extension;
     @CsvBindByName
     private String pictureLink;
     @CsvBindByName
@@ -15,6 +18,10 @@ public class NFT_Picture {
     private String price;
     @CsvBindByName
     private String email_owner;
+
+    public String getExtension() {return extension;}
+
+    public void setExtension(String extension) {this.extension = extension;}
 
     public String getId() {return id;}
 
