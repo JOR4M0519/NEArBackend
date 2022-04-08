@@ -8,11 +8,13 @@ import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 
 public class UserService {
@@ -23,7 +25,33 @@ public class UserService {
     public static Optional<List<User>> getUsers() throws IOException {
 
         List<User> users;
-        System.out.println("getUsers"+ruta);
+
+
+        try (InputStream is = new FileInputStream(ruta)) {
+
+            if (is == null) {
+                return Optional.empty();
+            }
+            HeaderColumnNameMappingStrategy<User> strategy = new HeaderColumnNameMappingStrategy<>();
+            strategy.setType(User.class);
+
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
+                CsvToBean<User> csvToBean = new CsvToBeanBuilder<User>(br)
+                        .withType(User.class)
+                        .withMappingStrategy(strategy)
+                        .withIgnoreLeadingWhiteSpace(true)
+                        .build();
+                users = csvToBean.parse();
+                System.out.println("no estoy vacio: " + users.get(users.size()-1).getUsername());
+            }
+        }
+        return Optional.of(users);
+    }
+
+    public static Optional<List<NFT_Picture>> getNFT() throws IOException {
+
+        List<NFT_Picture> NFt;
+        System.out.println("getNFT"+ruta);
 
         try (InputStream is = UserService.class.getClassLoader()
                 .getResourceAsStream(ruta)) {
@@ -32,24 +60,32 @@ public class UserService {
                 return Optional.empty();
             }
 
-            HeaderColumnNameMappingStrategy<User> strategy = new HeaderColumnNameMappingStrategy<>();
-            strategy.setType(User.class);
+            HeaderColumnNameMappingStrategy<NFT_Picture> strategy = new HeaderColumnNameMappingStrategy<>();
+            strategy.setType(NFT_Picture.class);
 
             try (BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
 
-                CsvToBean<User> csvToBean = new CsvToBeanBuilder<User>(br)
-                        .withType(User.class)
+                CsvToBean<NFT_Picture> csvToBean = new CsvToBeanBuilder<NFT_Picture>(br)
+                        .withType(NFT_Picture.class)
                         .withMappingStrategy(strategy)
                         .withIgnoreLeadingWhiteSpace(true)
                         .build();
 
-                users = csvToBean.parse();
+                NFt = csvToBean.parse();
             }
         }
 
-        return Optional.of(users);
+        return Optional.of(NFt);
     }
 
+    public void createUser2(String username,String name,String lastname,String password,String role,String Fcoins, String path) throws IOException {
+            String newLine =  username + "," + name + ","+lastname+ "," + role + ","+ password +","+"0"+"\n";
+        String fullpath = path.replace("NEArBackend-1.0-SNAPSHOT"+File.separator,"")+ "classes"+File.separator+"Users.csv";
+        System.out.println("Users:"+fullpath);
+        FileOutputStream os = new FileOutputStream(fullpath, true);
+            os.write(newLine.getBytes());
+            os.close();
+        }
     //Leer NFT
     public static Optional<List<NFT_Picture>> getNft() throws IOException {
 
@@ -78,6 +114,18 @@ public class UserService {
         return Optional.of(nft);
     }
 
+    public void createNFT2(String id,String title,String author, String price,String email_owner, String path) throws IOException {
+        String newLine = "\n" + id + "," + title + ","+author+ "," + price + ","+ email_owner +","+"0";
+
+        String fullpath = path.replace("NEArBackend-1.0-SNAPSHOT"+File.separator,"")+ "classes"+File.separator+"Nfts.csv";
+
+        System.out.println("nft ruta: "+fullpath);
+        FileOutputStream os = new FileOutputStream( fullpath, true);
+
+        os.write(newLine.getBytes());
+        os.close();
+    }
+
     //Crear NFT
     public void createNFT(String id,String pictureLink,String title,String author,String price,String email_owner){
         String STRING_ARRAY_SAMPLE = "resources/Nfts.csv";
@@ -99,8 +147,13 @@ public class UserService {
             }
     }
 
-    public void newUser(String username,String name,String lastname, String role,String password,String Fcoins){
-
+    public void newUser(String username,String name,String lastname, String role,String password,String Fcoins) {
+        List<User> users = null;
+        try {
+            users = getUsers().get();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         try (
                 Writer writer = Files.newBufferedWriter(Paths.get(ruta));
 
@@ -112,7 +165,6 @@ public class UserService {
         ) {
 
 
-            List<User> users = getUsers().get();
             String[] headerRecord = {"username","name","lastname","role","password","Fcoins"};
             csvWriter.writeNext(headerRecord);
             for (int i=0;i<users.size();i++){
@@ -187,6 +239,21 @@ public class UserService {
     //Eliminar archivo
     public static void deleteFile(String URL){
          new File(URL).delete();
+    }
+
+    public String generateRandomString() {
+            int leftLimit = 48; // numeral '0'
+            int rightLimit = 122; // letter 'z'
+            int targetStringLength = 10;
+            Random random = new Random();
+
+            String generatedString = random.ints(leftLimit, rightLimit + 1)
+                    .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+                    .limit(targetStringLength)
+                    .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                    .toString();
+
+        return generatedString;
     }
 
     public static void main(String args[]) {

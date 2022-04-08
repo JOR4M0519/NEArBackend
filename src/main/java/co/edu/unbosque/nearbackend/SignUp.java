@@ -36,8 +36,7 @@ public class SignUp extends HttpServlet {
         String role = request.getParameter("role");
 
         uService = new UserService();
-        uService.setRuta(getServletContext().getRealPath("") + File.separator + "resources\\Users.csv");
-        System.out.println(uService.getRuta());
+        uService.setRuta(getServletContext().getRealPath("").replace("NEArBackend-1.0-SNAPSHOT","")+ "classes"+File.separator+"Users.csv");
 
         List<User> users = uService.getUsers().get();
 
@@ -47,9 +46,7 @@ public class SignUp extends HttpServlet {
 
         if (userFounded == null) {
 
-
-            uService.newUser(username,name,lastname,role,password,"0");
-            System.out.println(getServletContext().getRealPath("") + File.separator + "resources\\Users.csv");
+            new UserService().createUser2(username, name, lastname, password, role, "0",getServletContext().getRealPath("") + File.separator);
             RequestDispatcher dispatcher = request.getRequestDispatcher("./index.jsp");
 
             try {

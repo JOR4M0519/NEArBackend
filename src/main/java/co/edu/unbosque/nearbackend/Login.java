@@ -43,8 +43,9 @@ public class Login extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
+
         uService = new UserService();
-        uService.setRuta(getServletContext().getRealPath("") + File.separator + "resources\\Users.csv");
+        uService.setRuta(getServletContext().getRealPath("").replace("NEArBackend-1.0-SNAPSHOT","")+ "classes"+File.separator+"Users.csv");
         
         List<User> users = new UserService().getUsers().get();
 
