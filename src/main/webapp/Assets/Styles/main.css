@@ -529,14 +529,32 @@ input[type=submit]#login-submit{
   height: 100%;
   transition: 1s;
   z-index: 10;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .card:hover .content{
   height: 210px;
+  opacity: 1;
+  visibility: visible;
+  background-color: rgba(255, 255, 255, 0.432);
 }
 
 .card:hover .content h3{
   position: relative;
+}
+
+.card .content button{
+  display: inline-block;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card:hover .content button{
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 0.75s;
 }
 
 .contenedor .text{
@@ -594,4 +612,6 @@ input[type=submit]#login-submit{
 .contenedor #informacion-personal .conten-info{
   margin-bottom: 5%;
 }
+
+
 
