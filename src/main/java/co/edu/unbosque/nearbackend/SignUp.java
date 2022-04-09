@@ -1,5 +1,6 @@
 package co.edu.unbosque.nearbackend;
 
+import co.edu.unbosque.nearbackend.dtos.FCoins;
 import co.edu.unbosque.nearbackend.dtos.User;
 import co.edu.unbosque.nearbackend.services.UserService;
 import jakarta.servlet.RequestDispatcher;
@@ -43,14 +44,19 @@ public class SignUp extends HttpServlet {
         User userFounded = users.stream().filter(user -> username.equals(user.getUsername()))
                 .findFirst().orElse(null);
 
+
         RequestDispatcher dispatcher =null;
 
 
         if (userFounded == null) {
 
-
-            new UserService().createUser(username, name, lastname, password, role, "0",getServletContext().getRealPath("") + File.separator);
+            uService.createUser(username, name, lastname, password, role, "0",getServletContext().getRealPath("") + File.separator);
+            uService.setRuta(getServletContext().getRealPath("").replace("NEArBackend-1.0-SNAPSHOT","")+ "classes"+File.separator+"FCoins.csv");
+            long fcoins = uService.amountMoney(username);
+            System.out.println(username+fcoins);
             request.setAttribute("name", name);
+            request.setAttribute("fcoins", fcoins);
+
             dispatcher = request.getRequestDispatcher("./index.jsp");
 
 

@@ -1,5 +1,6 @@
 package co.edu.unbosque.nearbackend.services;
 
+import co.edu.unbosque.nearbackend.dtos.FCoins;
 import co.edu.unbosque.nearbackend.dtos.NFT_Picture;
 import co.edu.unbosque.nearbackend.dtos.User;
 import com.opencsv.bean.CsvToBean;
@@ -8,15 +9,17 @@ import com.opencsv.bean.HeaderColumnNameMappingStrategy;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
+import java.util.stream.Stream;
 
 
 public class UserService {
 
 
-    private static String ruta = "";
+    private static String ruta = "src/main/resources/FCoins.csv";
     //Leer Usuario
     public static Optional<List<User>> getUsers() throws IOException {
 
@@ -41,6 +44,31 @@ public class UserService {
             }
         }
         return Optional.of(users);
+    }
+
+    public static Optional<List<FCoins>> getFCoins() throws IOException {
+
+        List<FCoins> fCoins;
+
+        try (InputStream is = new FileInputStream(ruta)) {
+
+            if (is == null) {
+                return Optional.empty();
+            }
+            HeaderColumnNameMappingStrategy<FCoins> strategy = new HeaderColumnNameMappingStrategy<>();
+            strategy.setType(FCoins.class);
+
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
+                CsvToBean<FCoins> csvToBean = new CsvToBeanBuilder<FCoins>(br)
+                        .withType(FCoins.class)
+                        .withMappingStrategy(strategy)
+                        .withIgnoreLeadingWhiteSpace(true)
+                        .build();
+                fCoins = csvToBean.parse();
+
+            }
+        }
+        return Optional.of(fCoins);
     }
 
     //Leer NFT
@@ -79,6 +107,15 @@ public class UserService {
             os.close();
         }
 
+    public void createMoney(String username, String fcoins, String path) throws IOException {
+        String newLine =  username + "," + fcoins+"\n";
+        String fullpath = path.replace("NEArBackend-1.0-SNAPSHOT"+File.separator,"")+ "classes"+File.separator+"FCoins.csv";
+        System.out.println("Fcoins:"+fullpath);
+        FileOutputStream os = new FileOutputStream(fullpath, true);
+        os.write(newLine.getBytes());
+        os.close();
+    }
+
     public void createNFT(String id, String extension, String title, String author, String price, String email_owner, String path) throws IOException {
         String newLine = id + "," + extension + "," + title + ","+author+ "," + price + ","+ email_owner +","+"0"+"\n";
 
@@ -91,45 +128,18 @@ public class UserService {
 
     }
 
-    //Recargar Cuenta
-    public void reloadMoney(String username, int coins){
-        try {
-            List<User> users = getUsers().get();
+    public long amountMoney(String username) throws IOException {
 
-            User userFounded = users.stream().filter(user -> username.equals(user.getUsername())).findFirst().orElse(null);
-            userFounded.setFcoins((Integer.parseInt(userFounded.getFcoins())+coins)+"");
-            updateUser(users);
+        long amount = 0;
+        List<FCoins> fCoins = getFCoins().get();
+
+        for (int i = 0; i < fCoins.size(); i++) {
+            if (fCoins.get(i).getUsername().equals(username)) {
+                amount += Long.parseLong(fCoins.get(i).getFCoins());
+            }
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        return amount;
     }
-
-    public void updateUser(List<User> users){
-        deleteFile("resources/Users.csv");
-        for (int i=0;i<users.size();i++){
-            //createUser(users.get(i).getUsername(),users.get(i).getName(),users.get(i).getLastname(),users.get(i).getRole(),users.get(i).getPassword(),users.get(i).getFcoins());
-        }
-    }
-
-    //Eliminar Usuario
-    public void deleteUser(String email){
-        try {
-            List<User> users = getUsers().get();
-            User userFounded = users.stream().filter(user -> email.equals(user.getUsername())).findFirst().orElse(null);
-            users.remove(userFounded);
-            updateUser(users);
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    //Eliminar archivo
-    public static void deleteFile(String URL){
-         new File(URL).delete();
-    }
-
     public String generateRandomString() {
             int leftLimit = 48; // numeral '0'
             int rightLimit = 122; // letter 'z'
@@ -148,9 +158,9 @@ public class UserService {
     public static void main(String args[]) {
 
         try {
-            Optional<List<User>> users = new UserService().getUsers();
+            Optional<List<FCoins>> users = new UserService().getFCoins();
 
-            for (User user: users.get()) {
+            for (FCoins user: users.get()) {
                 System.out.println(user.toString());
             }
 

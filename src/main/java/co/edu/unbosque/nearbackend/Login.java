@@ -41,7 +41,11 @@ public class Login extends HttpServlet {
                 response.sendRedirect("./401.html");
 
             } else {
+                uService.setRuta(getServletContext().getRealPath("").replace("NEArBackend-1.0-SNAPSHOT","")+ "classes"+File.separator+"FCoins.csv");
+                long fcoins = uService.amountMoney(username);
+                System.out.println(fcoins);
                 request.setAttribute("name", userFounded.getName());
+                request.setAttribute("fcoins", fcoins);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("./index.jsp");
 
                 try {
