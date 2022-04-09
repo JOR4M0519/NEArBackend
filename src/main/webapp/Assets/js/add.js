@@ -18,7 +18,7 @@ formulario.addEventListener("submit", async (esc) => {
     body: JSON.stringify({
       colection: coleccion,
       nickname: nickname,
-      price: price+" FCoins",
+      price: price+" FCoins.csv",
       name: name,
       photo: photo,
       likes: 0,

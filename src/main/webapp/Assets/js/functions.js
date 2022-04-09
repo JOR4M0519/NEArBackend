@@ -25,7 +25,7 @@ const getData = async () => {
   const data = await resp.json();
   console.log(data);
   data.forEach((card) => {
-    const { id, name, photo, colection, price, likes, nickname } = card;
+    const {   photo, colection, likes, nickname } = card;
     const { id,extension,title,author,price,email_owner } = card;
     campo.innerHTML += ` 
     <div class="card">

@@ -24,14 +24,20 @@
 
   String data ="";
   String name ="";
+  String buttonFcoins ="";
+  String fcoins= String.valueOf(request.getAttribute("fcoins"));
+  String percent = "";
+
   if( request.getAttribute("name") != null) {
     name = String.valueOf(request.getAttribute("name"));
     data = "<form action=\"./account\" method=\"post\" name=\"myaccount\"> <input type=\"hidden\" id=\"usernameData\" name=\"usernameData\"> <input class=\"dropdown-item\" id=\"dropdown-item\" type=\"submit\" value=\"Mi cuenta\"> </form> <form action=\"./account\" method=\"get\"> <input type=\"hidden\" name=\"usernameData\"> <input class=\"dropdown-item \" id=\"dropdown-item\" type=\"submit\" value=\"Salir\"> </form>";
+    buttonFcoins = "<div class=\"dropdown show\" style=\"float: left;\"> <a class=\"btn btn-secondary\" id=\"dropdown\"  href=\"./account.jsp#FCoins\" role=\"button\" id=\"dropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> <span  id=\"fCoins\"> "+ "FCoins: $" +fcoins+"</span> </a> </div>";
+    percent = "73%";
 
   }else{
     name ="Mi Cuenta";
     data = "<a class=\"dropdown-item \" id=\"dropdown-item\" href=\"./login.html\"> Iniciar Sesión </a><a class=\"dropdown-item\" id=\"dropdown-item\" href=\"./sign_up.jsp\"> Crear cuenta </a>";
-
+    percent = "83%";
 
 }
 %>
@@ -39,8 +45,10 @@
 <!-- NAVIGATION -->
 <div class=" fixed-top" style="background-color: #BA2737 ;">
 
-<div style="display: flex; margin-left: 83%; padding-bottom: 0.5%; padding-top: 0.2%;">
-  
+<div style="display: flex; margin-left: <%=percent %>; padding-bottom: 0.5%; padding-top: 0.2%;">
+
+    <%=buttonFcoins%>
+
     <div class="dropdown show" style="float: left;">
       <a class="btn btn-secondary dropdown-toggle" id="dropdown"  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
