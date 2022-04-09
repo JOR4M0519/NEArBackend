@@ -613,5 +613,14 @@ input[type=submit]#login-submit{
   margin-bottom: 5%;
 }
 
+#fcoins
+{
+  width: 1000px;
+}
 
+.coin{
+  position: absolute;
+  padding-left: 38%;
+  padding-top: 5%;
+}
 
