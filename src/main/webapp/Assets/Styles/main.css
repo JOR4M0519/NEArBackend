@@ -6,7 +6,6 @@
   font-family: "Poppins" , sans-serif;
 }
 
-
 #form1{
   width: 600px;
   padding-left: 20px;
@@ -137,6 +136,18 @@
   background-color: #BA2737;
 }
 
+.card-dimensions{
+  padding: 2%;
+  background-color: #e3e3e3;
+  border-color: grey;
+  border-radius: 5%;
+  height: 50.44vh;
+  width: 18.75vw;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
 .container-input-search, .btn-primary{
   border: none;
   height: 50px;
@@ -158,6 +169,11 @@
 {
   text-align: left;
   color: #1260d6;
+}
+
+.card-position{
+  align-items: center;
+  display: flex;
 }
 
 .cards
@@ -537,7 +553,7 @@ input[type=submit]#login-submit{
   height: 210px;
   opacity: 1;
   visibility: visible;
-  background-color: rgba(255, 255, 255, 0.432);
+  background-color: rgba(255, 255, 255, 0.900);
 }
 
 .card:hover .content h3{
@@ -580,7 +596,7 @@ input[type=submit]#login-submit{
   width: 13%;
   margin-left: 1%;
   margin-top: 2%;
-} 
+}
 
 .contenedor .info #text-icono{
   margin-top: 0.5%;
@@ -623,4 +639,3 @@ input[type=submit]#login-submit{
   padding-left: 38%;
   padding-top: 5%;
 }
-

@@ -32,12 +32,13 @@
 
       <form action="./uploadNft" method="post" enctype="multipart/form-data" >
       <% 
-        String author = "4"+request.getParameter("username");
+        String author = request.getParameter("username");
+          System.out.println("Dataname: "+author);
       %>
         
       <div class="form-group" >
         <label for="name" >Author:</label>
-        <input class="form-control" style="pointer-events:none;" id="name" name="author" placeholder=<%= author%>>
+        <input class="form-control" style="pointer-events:none;" id="name" name="author" value="<%=author %>">
       </div>  
         
       <div class="form-group" >
@@ -52,14 +53,12 @@
 
       <div class="form-group">
         <label for="name">Subir NFT</label>
-        <input class="form-control" id="name" placeholder="ULR" name="url" >
       </div>
 
      <div class="custom-file">
         <label>Subir archivo</label>
-        
         <input type="file" class="custom-file-input" id="customFile" name="file" >
-        <label class="custom-file-label"  style="font-family: 'Abel', sans-serif;" for="customFile" >Elegir Archivo</label>
+        <label class="custom-file-label" style="font-family: 'Abel', sans-serif;" for="customFile" >Elegir Archivo</label>
       </div>
 
 

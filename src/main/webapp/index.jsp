@@ -24,31 +24,35 @@
 
   String data ="";
   String name ="";
-  String buttonFcoins ="";
-  String fcoins= String.valueOf(request.getAttribute("fcoins"));
-  String percent = "";
+  String role="";
+  String fcoinsButton="";
+  String fcoins = "";
+  String percent ="85%";
+
+  System.out.println("upload nft user: " + request.getAttribute("name"));
 
   if( request.getAttribute("name") != null) {
     name = String.valueOf(request.getAttribute("name"));
-    data = "<form action=\"./account\" method=\"post\" name=\"myaccount\"> <input type=\"hidden\" id=\"usernameData\" name=\"usernameData\"> <input class=\"dropdown-item\" id=\"dropdown-item\" type=\"submit\" value=\"Mi cuenta\"> </form> <form action=\"./account\" method=\"get\"> <input type=\"hidden\" name=\"usernameData\"> <input class=\"dropdown-item \" id=\"dropdown-item\" type=\"submit\" value=\"Salir\"> </form>";
-    buttonFcoins = "<div class=\"dropdown show\" style=\"float: left;\"> <a class=\"btn btn-secondary\" id=\"dropdown\"  href=\"./account.jsp#FCoins\" role=\"button\" id=\"dropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> <span  id=\"fCoins\"> "+ "FCoins: $" +fcoins+"</span> </a> </div>";
-    percent = "73%";
+    role = String.valueOf(request.getAttribute("role"));
+    fcoins = String.valueOf(request.getAttribute("fcoins"));
 
+    if (role.equals("Comprador")) {
+
+      percent = "79%";
+      fcoinsButton = "<div class=\"dropdown show\" style=\"float: left;\"><a class=\"btn btn-secondary\" id=\"dropdown\"  href=\"#\" role=\"button\"  aria-haspopup=\"true\" aria-expanded=\"false\"><span  id=\"fcoins\"> FCoins: $" + fcoins + " </span></a></div>";
+    }
+    data = "<form action=\"./account\" method=\"post\" name=\"myaccount\"> <input type=\"hidden\" name=\"role\" value=\""+role+"\"> <input type=\"hidden\" id=\"usernameData\" name=\"usernameData\"> <input class=\"dropdown-item\" id=\"dropdown-item\" type=\"submit\" value=\"Mi cuenta\"> </form> <form action=\"./account\" method=\"get\"> <input type=\"hidden\" name=\"usernameData\"> <input class=\"dropdown-item \" id=\"dropdown-item\" type=\"submit\" value=\"Salir\"> </form>";
   }else{
     name ="Mi Cuenta";
-    data = "<a class=\"dropdown-item \" id=\"dropdown-item\" href=\"./login.html\"> Iniciar Sesión </a><a class=\"dropdown-item\" id=\"dropdown-item\" href=\"./sign_up.jsp\"> Crear cuenta </a>";
-    percent = "83%";
-
-}
+    data = "<a class=\"dropdown-item \" id=\"dropdown-item\" href=\"./login.jsp\"> Iniciar Sesión </a><a class=\"dropdown-item\" id=\"dropdown-item\" href=\"./sign_up.jsp\"> Crear cuenta </a>";
+  }
 %>
-
 <!-- NAVIGATION -->
 <div class=" fixed-top" style="background-color: #BA2737 ;">
 
-<div style="display: flex; margin-left: <%=percent %>; padding-bottom: 0.5%; padding-top: 0.2%;">
+  <div style="display: flex; margin-left: <%=percent%>; padding-bottom: 0.5%; padding-top: 0.2%;">
 
-    <%=buttonFcoins%>
-
+    <%=fcoinsButton%>
     <div class="dropdown show" style="float: left;">
       <a class="btn btn-secondary dropdown-toggle" id="dropdown"  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
@@ -59,41 +63,42 @@
         <span  id="nameAccount"> <%= name %> </span>
       </a>
 
+
       <div class="dropdown-menu" id="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <%=data%>
+        <%=data%>
       </div>
     </div>
 
-</div>
+  </div>
 
 
-<nav class="navbar" style=" display: inline-block; width: 100%; background-color: #BA2737;" >  
-  <div class="input-group">
-    
-    <a class="navbar-brand" href="#">
-      <img src="Assets/img/logoNear2.png" class="logo">
-    </a>
-    
-    <input class="container-input-search" type="search" id="form1" class="form-control" placeholder="Buscar arte" >    
-    <button type="button" style="background-color: #ffffff2c" class="btn btn-primary" >
-      <i class="fas fa-search"></i>
-    </button>  
+  <nav class="navbar" style=" display: inline-block; width: 100%; background-color: #BA2737;" >
+    <div class="input-group">
 
-    <div class="navbar navbar-expand-lg" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a id="nav-a" class="nav-link" href="#info">Info</a>
-        </li>
-        <li class="nav-item">
-          <a id="nav-a" class="nav-link" href="#Artist">Artistas</a>
-        </li>
-        <li class="nav-item">
-          <a id="nav-a"  class="nav-link" href="#Contact">Contáctenos</a>
-        </li>
-      </ul>
-    </div> 
-    
-</nav>
+      <a class="navbar-brand" href="#">
+        <img src="Assets/img/logoNear2.png" class="logo">
+      </a>
+
+      <input class="container-input-search" type="search" id="form1" class="form-control" placeholder="Buscar arte" >
+      <button type="button" style="background-color: #ffffff2c" class="btn btn-primary" >
+        <i class="fas fa-search"></i>
+      </button>
+
+      <div class="navbar navbar-expand-lg" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a id="nav-a" class="nav-link" href="#info">Info</a>
+          </li>
+          <li class="nav-item">
+            <a id="nav-a" class="nav-link" href="#Artist">Artistas</a>
+          </li>
+          <li class="nav-item">
+            <a id="nav-a"  class="nav-link" href="#Contact">Contáctenos</a>
+          </li>
+        </ul>
+      </div>
+
+  </nav>
 </div>
 
 <!-- HEADER -->
@@ -126,7 +131,7 @@
     </a>
   </div>
 
-   
+
 
 </header>
 
@@ -142,8 +147,8 @@
               <tr>
                 <td>
                   <img
-                    src="https://http2.mlstatic.com/resources/frontend/homes-korriban/assets/images/payments/credit-card.svg"
-                    alt="Metodos de pago">
+                          src="https://http2.mlstatic.com/resources/frontend/homes-korriban/assets/images/payments/credit-card.svg"
+                          alt="Metodos de pago">
                 </td>
                 <td>
                   <h6>Paga a cuotas</h6>
@@ -222,7 +227,7 @@
 </section>
 
 <!-- ABOUT -->
-<section class="m5 text-center bg-light" id="info">
+<section class="m5 text-center " id="info" style="background-color: #e4e9f77d">
   <div class="container">
     <div class="row">
       <div class="m-5">
@@ -237,57 +242,18 @@
 </section>
 
 
-<section class="py-5">
+<section class="py-5" style="background-color: #E4E9F7">
   <div class="cards">
     <p id="ofertas" class="card_tittle">Catálogo:</p>
     <!--Guia js-->
     <div class="card-group contenedor-social" id="socialcard">
       <section class="py-5">
 
-        <div class="album py-5 bg-light">
+        <div class="album py-5">
           <div class="container">
 
-            <div class="row">
-              <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <div class="imgBx">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="100%" src="https://www.arweave.net/yoNSEKfSCGY23L14Y_P06G42r79G7cl4HYFeM5kjXdo?ext=png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></img>
-                  </div>
-                  <div class="content">
-                    <div class="card-body">
-                      <h3 class="card-text">Nombre NFT</h3>
-                      <p class="card-text">Autor NFT</p>
-                      <p class="text-muted">Precio NFT</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group btns">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carro</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <div class="imgBx">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="100%" src="https://www.arweave.net/yoNSEKfSCGY23L14Y_P06G42r79G7cl4HYFeM5kjXdo?ext=png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></img>
-                  </div>
-                  <div class="content">
-                    <div class="card-body">
-                      <h3 class="card-text">Nombre NFT</h3>
-                      <p class="card-text">Autor NFT</p>
-                      <p class="text-muted">Precio NFT</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group btns">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al carro</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="row" id="card">
+
             </div>
           </div>
         </div>
@@ -435,11 +401,10 @@
   Myelement.setAttribute('value',user);
   console.log(Myelement.value);
 
-
-
 </script>
+
 <!-- BOOTSTRAP SCRIPTS -->
-<script src="Assets/js/functions.js"></script>
+<script src="Assets/js/generalCatalogue.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

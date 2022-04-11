@@ -9,17 +9,15 @@ import com.opencsv.bean.HeaderColumnNameMappingStrategy;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
-import java.util.stream.Stream;
 
 
 public class UserService {
 
 
-    private static String ruta = "src/main/resources/FCoins.csv";
+    private static String ruta = "";
     //Leer Usuario
     public static Optional<List<User>> getUsers() throws IOException {
 
@@ -40,7 +38,6 @@ public class UserService {
                         .withIgnoreLeadingWhiteSpace(true)
                         .build();
                 users = csvToBean.parse();
-                System.out.println("no estoy vacio: " + users.get(users.size()-1).getUsername());
             }
         }
         return Optional.of(users);
@@ -48,7 +45,7 @@ public class UserService {
 
     public static Optional<List<FCoins>> getFCoins() throws IOException {
 
-        List<FCoins> fCoins;
+        List<FCoins> fcoins;
 
         try (InputStream is = new FileInputStream(ruta)) {
 
@@ -64,11 +61,10 @@ public class UserService {
                         .withMappingStrategy(strategy)
                         .withIgnoreLeadingWhiteSpace(true)
                         .build();
-                fCoins = csvToBean.parse();
-
+                fcoins = csvToBean.parse();
             }
         }
-        return Optional.of(fCoins);
+        return Optional.of(fcoins);
     }
 
     //Leer NFT
@@ -101,27 +97,27 @@ public class UserService {
     public void createUser(String username, String name, String lastname, String password, String role, String Fcoins, String path) throws IOException {
             String newLine =  username + "," + name + ","+lastname+ "," + role + ","+ password +","+"0"+"\n";
         String fullpath = path.replace("NEArBackend-1.0-SNAPSHOT"+File.separator,"")+ "classes"+File.separator+"Users.csv";
-        System.out.println("Users:"+fullpath);
+
         FileOutputStream os = new FileOutputStream(fullpath, true);
             os.write(newLine.getBytes());
             os.close();
-        }
+    }
+    public void createMoney(String username,String fcoins, String path) throws IOException {
+        String newLine = username + "," + fcoins + "\n";
+        String fullpath = path.replace("NEArBackend-1.0-SNAPSHOT" + File.separator, "") + "classes" + File.separator + "FCoins.csv";
 
-    public void createMoney(String username, String fcoins, String path) throws IOException {
-        String newLine =  username + "," + fcoins+"\n";
-        String fullpath = path.replace("NEArBackend-1.0-SNAPSHOT"+File.separator,"")+ "classes"+File.separator+"FCoins.csv";
-        System.out.println("Fcoins:"+fullpath);
         FileOutputStream os = new FileOutputStream(fullpath, true);
         os.write(newLine.getBytes());
         os.close();
     }
 
+
     public void createNFT(String id, String extension, String title, String author, String price, String email_owner, String path) throws IOException {
-        String newLine = id + "," + extension + "," + title + ","+author+ "," + price + ","+ email_owner +","+"0"+"\n";
+        String newLine = id + "," + extension + "," + title + ","+author+ "," + price + ","+"0"+","+ email_owner +"\n";
 
         String fullpath = path.replace("NEArBackend-1.0-SNAPSHOT"+File.separator,"")+ "classes"+File.separator+"Nfts.csv";
 
-        System.out.println("nft ruta: "+fullpath);
+
         FileOutputStream os = new FileOutputStream( fullpath, true);
         os.write(newLine.getBytes());
         os.close();
@@ -140,6 +136,11 @@ public class UserService {
         }
         return amount;
     }
+
+    public static void deleteFile(String URL){
+         new File(URL).delete();
+    }
+
     public String generateRandomString() {
             int leftLimit = 48; // numeral '0'
             int rightLimit = 122; // letter 'z'
@@ -158,9 +159,9 @@ public class UserService {
     public static void main(String args[]) {
 
         try {
-            Optional<List<FCoins>> users = new UserService().getFCoins();
+            Optional<List<User>> users = new UserService().getUsers();
 
-            for (FCoins user: users.get()) {
+            for (User user: users.get()) {
                 System.out.println(user.toString());
             }
 

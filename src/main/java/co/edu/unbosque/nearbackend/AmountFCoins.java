@@ -1,5 +1,6 @@
 package co.edu.unbosque.nearbackend;
 
+import co.edu.unbosque.nearbackend.dtos.FCoins;
 import co.edu.unbosque.nearbackend.dtos.User;
 import co.edu.unbosque.nearbackend.services.UserService;
 import jakarta.servlet.RequestDispatcher;
@@ -13,7 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "singup", value = "/singup")
+@WebServlet(name = "money", value = "/money")
 public class AmountFCoins extends HttpServlet {
 
     private String message;
@@ -27,39 +28,28 @@ public class AmountFCoins extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
 
-
-
+        String fcoins = request.getParameter("cantidad");
         String username = request.getParameter("username");
-        String name = request.getParameter("name");
-        String lastname = request.getParameter("lastname");
-        String password = request.getParameter("password");
         String role = request.getParameter("role");
 
         uService = new UserService();
+        uService.setRuta(getServletContext().getRealPath("").replace("NEArBackend-1.0-SNAPSHOT","")+ "classes"+File.separator+"FCoins.csv");
+
+        uService.createMoney(username,fcoins, getServletContext().getRealPath("") + File.separator);
+        request.setAttribute("fcoins", uService.amountMoney(username));
+
         uService.setRuta(getServletContext().getRealPath("").replace("NEArBackend-1.0-SNAPSHOT","")+ "classes"+File.separator+"Users.csv");
+        List<User> users = new UserService().getUsers().get();
 
-        List<User> users = uService.getUsers().get();
-
-        User userFounded = users.stream().filter(user -> username.equals(user.getUsername()))
+        User userFounded = users.stream().filter(user -> username.equals(user.getUsername()) && role.equals(user.getRole()))
                 .findFirst().orElse(null);
 
-        RequestDispatcher dispatcher =null;
+        request.setAttribute("role", userFounded.getRole());
+        request.setAttribute("name", userFounded.getName());
 
 
-        if (userFounded == null) {
+        RequestDispatcher dispatcher =request.getRequestDispatcher("./index.jsp");
 
-
-            new UserService().createUser(username, name, lastname, password, role, "0",getServletContext().getRealPath("") + File.separator);
-            request.setAttribute("name", name);
-            dispatcher = request.getRequestDispatcher("./index.jsp");
-
-
-        }else{
-
-            request.setAttribute("status", "failed");
-            dispatcher = request.getRequestDispatcher("./sign_up.jsp");
-
-        }
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {

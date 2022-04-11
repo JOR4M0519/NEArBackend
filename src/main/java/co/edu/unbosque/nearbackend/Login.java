@@ -20,41 +20,44 @@ public class Login extends HttpServlet {
         message = "Hello World!";
     }
 
+
+
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String role = request.getParameter("role");
 
-
+        RequestDispatcher dispatcher = null;
         uService = new UserService();
         uService.setRuta(getServletContext().getRealPath("").replace("NEArBackend-1.0-SNAPSHOT","")+ "classes"+File.separator+"Users.csv");
         
         List<User> users = new UserService().getUsers().get();
 
-        User userFounded = users.stream().filter(user -> username.equals(user.getUsername()) && password.equals(user.getPassword()))
+        User userFounded = users.stream().filter(user -> username.equals(user.getUsername()) && password.equals(user.getPassword()) && role.equals(user.getRole()) )
                 .findFirst().orElse(null);
 
-        if (username.equals(userFounded.getUsername()) && password.equals(userFounded.getPassword())) {
 
-            if (userFounded == null) {
-
-                response.sendRedirect("./401.html");
-
-            } else {
-                uService.setRuta(getServletContext().getRealPath("").replace("NEArBackend-1.0-SNAPSHOT","")+ "classes"+File.separator+"FCoins.csv");
-                long fcoins = uService.amountMoney(username);
-                System.out.println(fcoins);
+        if (userFounded == null) {
+            request.setAttribute("status", "failed");
+            System.out.println("failed");
+            dispatcher = request.getRequestDispatcher("login.jsp");
+        }
+        else{
+            if (username.equals(userFounded.getUsername()) && password.equals(userFounded.getPassword())) {
                 request.setAttribute("name", userFounded.getName());
-                request.setAttribute("fcoins", fcoins);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("./index.jsp");
+                request.setAttribute("role", userFounded.getRole());
+                uService.setRuta(getServletContext().getRealPath("").replace("NEArBackend-1.0-SNAPSHOT","")+ "classes"+File.separator+"FCoins.csv");
+                request.setAttribute("fcoins", uService.amountMoney(username));
 
-                try {
-
-                    dispatcher.forward(request, response);
-                } catch (ServletException e) {
-                    e.printStackTrace();
-                }
+                dispatcher = request.getRequestDispatcher("./index.jsp");
             }
         }
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        }
+
     }
 }

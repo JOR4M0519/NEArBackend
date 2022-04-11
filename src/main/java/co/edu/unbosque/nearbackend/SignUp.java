@@ -1,6 +1,5 @@
 package co.edu.unbosque.nearbackend;
 
-import co.edu.unbosque.nearbackend.dtos.FCoins;
 import co.edu.unbosque.nearbackend.dtos.User;
 import co.edu.unbosque.nearbackend.services.UserService;
 import jakarta.servlet.RequestDispatcher;
@@ -41,29 +40,36 @@ public class SignUp extends HttpServlet {
 
         List<User> users = uService.getUsers().get();
 
-        User userFounded = users.stream().filter(user -> username.equals(user.getUsername()))
+        User userFounded = users.stream().filter(user -> username.equals(user.getUsername()) && role.equals(user.getRole()))
                 .findFirst().orElse(null);
-
+        User userFounded2 = users.stream().filter(user -> username.equals(user.getUsername())  && !role.equals(user.getRole()))
+                .findFirst().orElse(null);
 
         RequestDispatcher dispatcher =null;
 
 
         if (userFounded == null) {
 
-            uService.createUser(username, name, lastname, password, role, "0",getServletContext().getRealPath("") + File.separator);
-            uService.setRuta(getServletContext().getRealPath("").replace("NEArBackend-1.0-SNAPSHOT","")+ "classes"+File.separator+"FCoins.csv");
-            long fcoins = uService.amountMoney(username);
-            System.out.println(username+fcoins);
-            request.setAttribute("name", name);
-            request.setAttribute("fcoins", fcoins);
 
+            new UserService().createUser(username, name, lastname, password, role, "0",getServletContext().getRealPath("") + File.separator);
+            request.setAttribute("name", name);
+            request.setAttribute("role", role);
+            uService.setRuta(getServletContext().getRealPath("").replace("NEArBackend-1.0-SNAPSHOT","")+ "classes"+File.separator+"FCoins.csv");
+            request.setAttribute("fcoins", uService.amountMoney(username));
             dispatcher = request.getRequestDispatcher("./index.jsp");
 
 
         }else{
+           if(userFounded2!=null){
+               request.setAttribute("status", "failed");
+               dispatcher = request.getRequestDispatcher("./sign_up.jsp");
+            }
+           else if(userFounded!=null) {
+               request.setAttribute("status", "failed2");
+               System.out.println("failed2");
+               dispatcher = request.getRequestDispatcher("./sign_up.jsp");
 
-            request.setAttribute("status", "failed");
-            dispatcher = request.getRequestDispatcher("./sign_up.jsp");
+           }
 
         }
         try {
