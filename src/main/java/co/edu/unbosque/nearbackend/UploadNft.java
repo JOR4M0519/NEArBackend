@@ -68,7 +68,9 @@ public class UploadNft extends HttpServlet {
         String uploadPath = getServletContext().getRealPath("")+File.separator+"NFTS";
 
         request.setAttribute("name",userFounded.getName());
-       
+        request.setAttribute("role",userFounded.getRole());
+        request.setAttribute("username",userFounded.getUsername());
+        String randomString = uService.generateRandomString();
 
         File uploadDir = new File(uploadPath);
         // If path doesn`t exist, create it
@@ -82,7 +84,7 @@ public class UploadNft extends HttpServlet {
                 {
                     extension = part.getSubmittedFileName().toString().split("\\.")[1];
                 }
-                fileName = uService.generateRandomString()+"&"+tittle+"."+extension;
+                fileName = randomString+"&"+tittle+"."+extension;
                 part.write(uploadPath + File.separator + fileName);
             }
         } catch (FileNotFoundException e) {

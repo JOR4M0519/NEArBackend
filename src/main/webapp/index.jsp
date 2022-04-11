@@ -19,9 +19,7 @@
 
 <body>
 <input type="hidden" id="username" value="<%= request.getParameter("username")%>">
-
 <%
-
   String data ="";
   String name ="";
   String role="";
@@ -29,7 +27,6 @@
   String fcoins = "";
   String percent ="85%";
 
-  System.out.println("upload nft user: " + request.getAttribute("name"));
 
   if( request.getAttribute("name") != null) {
     name = String.valueOf(request.getAttribute("name"));

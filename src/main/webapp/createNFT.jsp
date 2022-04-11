@@ -33,7 +33,6 @@
       <form action="./uploadNft" method="post" enctype="multipart/form-data" >
       <% 
         String author = request.getParameter("username");
-          System.out.println("Dataname: "+author);
       %>
         
       <div class="form-group" >
@@ -60,8 +59,7 @@
         <input type="file" class="custom-file-input" id="customFile" name="file" >
         <label class="custom-file-label" style="font-family: 'Abel', sans-serif;" for="customFile" >Elegir Archivo</label>
       </div>
-
-
+          <input type="hidden" name="username" value="<%=author%>" >
       <button type="submit" class="btn btn-primary; btn-box-sign-up" >Subir NFT</button>
     </form>
      

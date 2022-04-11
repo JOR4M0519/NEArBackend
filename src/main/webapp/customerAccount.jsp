@@ -39,7 +39,6 @@
     String password = String.valueOf(request.getAttribute("password"));
 
     String data = "<input type=\"hidden\" name=\"role\" value=\""+role+"\"> <input type=\"hidden\" id=\"username\"name=\"username\" value=\""+username+"\"> <input type=\"hidden\" id=\"password\"name=\"password\" value=\""+password+"\">";
-
 %>
 
 
@@ -105,7 +104,7 @@
                     <div class="job"><%=role%></div>
                 </div>
             </div>
-            <i class='bx bx-log-out' id="log_out" ></i>
+            <a href="index.jsp"><i class='bx bx-log-out' id="log_out" ></i></a>
         </li>
     </ul>
 </div>
